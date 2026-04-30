@@ -1,9 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Main Page</title>
+  <meta charset="UTF-8">
+  <title>DSS Log-In Page</title>
+  <link rel="stylesheet" href="main.css" />
+  <script src="main.js"></script>
 </head>
-<body style="background-color: green;">
+<body>
+<div class="portal">
+  <nav class="topnav">
+    <div class="logo-box">LOGO.PNG</div>
+    <div class="nav-item" id="nav-profile" onclick="showPage('profile',this)">Agent Profile</div>
+    <div class="nav-item active" id="nav-catalogue" onclick="showPage('catalogue',this)">Catalogue</div>
+    <div class="nav-item" id="nav-chatlog" onclick="showPage('chatlog',this)">Chat Log</div>
+    <div class="nav-item" id="nav-about" onclick="showPage('about',this)">About Us</div>
+  </nav>
+  <div class="body-area">
+    <aside class="sidebar">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="avatar"></div>
+        <div>
+          <div class="user-name">Username</div>
+          <div class="user-sub">Agent Numer</div>
+        </div>
+      </div>
+      <div class="agent-badge">Newly Assigned Agent</div>
+      <div class="pending-row"><div class="pulse-dot"></div> Pending Assignments</div>
+      <div class="divider"></div>
+      <div class="section-label">About You</div>
+      <div class="sidebar-link" id="sl-personals" onclick="showPage('personals',this,'sidebar')"><span class="chevron">›</span> Personals</div>
+      <div class="sidebar-link" id="sl-evaluations" onclick="showPage('evaluations',this,'sidebar')"><span class="chevron">›</span> Evaluations</div>
+      <div class="sidebar-link" id="sl-simulations" onclick="showPage('simulations',this,'sidebar')"><span class="chevron">›</span> Simulation Summaries</div>
+      <div style="padding-left:14px;display:flex;flex-direction:column;gap:3px;margin-top:2px;">
+        <div class="sub-item" id="sl-psych" onclick="showPage('psych',this,'sub')"><div class="mini-dot"></div> Psychological Eval.</div>
+        <div class="sub-item" id="sl-field" onclick="showPage('field',this,'sub')"><div class="mini-dot"></div> Field Work</div>
+        <div class="sub-item" id="sl-team" onclick="showPage('team',this,'sub')"><div class="mini-dot"></div> Team Building</div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="page-panel" id="page-profile">
+        <div class="content-card">
+          <div class="card-title">Agent Profile</div>
+          <div class="profile-row"><span class="profile-label">Name</span><span class="profile-value">Username</span></div>
+          <div class="profile-row"><span class="profile-label">Agent No.</span><span class="profile-value">Agent Numer</span></div>
+          <div class="profile-row"><span class="profile-label">Status</span><span style="color:#6a90b4;">Active</span></div>
+          <div class="profile-row"><span class="profile-label">Assignment</span><span style="color:#778ca4;">Pending</span></div>
+        </div>
+      </div>
+      <div class="page-panel active" id="page-catalogue">
+        <div class="content-card">
+          <div class="card-title">Catalogue</div>
+          <div class="catalogue-grid">
+            <div class="cat-card"><div class="cat-title">Item 001</div><div class="cat-sub">Category A</div></div>
+            <div class="cat-card"><div class="cat-title">Item 002</div><div class="cat-sub">Category B</div></div>
+            <div class="cat-card"><div class="cat-title">Item 003</div><div class="cat-sub">Category A</div></div>
+            <div class="cat-card"><div class="cat-title">Item 004</div><div class="cat-sub">Category C</div></div>
+            <div class="cat-card"><div class="cat-title">Item 005</div><div class="cat-sub">Category B</div></div>
+            <div class="cat-card"><div class="cat-title">Item 006</div><div class="cat-sub">Category C</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="page-panel" id="page-chatlog"><div class="content-card"><div class="card-title">Chat Log</div><div style="font-size:12px;color:#2a3d50;">No recent messages.</div></div></div>
+      <div class="page-panel" id="page-about"><div class="content-card"><div class="card-title">About Us</div><div style="font-size:12px;color:#4f6271;line-height:1.8;">Welcome to the Agent Portal. This platform manages agent profiles, assignments, evaluations, and team coordination.</div></div></div>
+      <div class="page-panel" id="page-personals"><div class="content-card"><div class="card-title">Personals</div><div style="font-size:12px;color:#2a3d50;">Personal information will appear here.</div></div></div>
+      <div class="page-panel" id="page-evaluations"><div class="content-card"><div class="card-title">Evaluations</div><div style="font-size:12px;color:#2a3d50;">Evaluation records will appear here.</div></div></div>
+      <div class="page-panel" id="page-simulations"><div class="content-card"><div class="card-title">Simulation Summaries</div><div style="font-size:12px;color:#2a3d50;">Simulation data will appear here.</div></div></div>
+      <div class="page-panel" id="page-psych"><div class="content-card"><div class="card-title">Psychological Evaluation</div><div style="font-size:12px;color:#2a3d50;">Evaluation records will appear here.</div></div></div>
+      <div class="page-panel" id="page-field"><div class="content-card"><div class="card-title">Field Work</div><div style="font-size:12px;color:#2a3d50;">Field work logs will appear here.</div></div></div>
+      <div class="page-panel" id="page-team"><div class="content-card"><div class="card-title">Team Building</div><div style="font-size:12px;color:#2a3d50;">Team building records will appear here.</div></div></div>
+    </main>
+
+    <div class="ads-panel">
+      <div class="ad-slot">
+        <img id="ad-img" src="" alt="Ad" onerror="this.style.display='none';document.getElementById('ad-ph').style.display='flex';" style="display:none;"/>
+        <div id="ad-ph" class="ad-placeholder">
+          <div class="ad-icon">🖼</div>
+          <div class="ad-label">Advertisement</div>
+          <div class="ad-hint">Drop your<br><span style="color:#1a3a55;">ad-banner.png</span><br>here</div>
+          <div class="ad-dim">180 × 580 px</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
-f
+
