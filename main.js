@@ -1,4 +1,3 @@
-
 function showPage(id, el, type) {
   document.querySelectorAll('.page-panel').forEach(p => p.classList.remove('active'));
   const panel = document.getElementById('page-' + id);
