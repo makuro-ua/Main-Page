@@ -19,7 +19,6 @@ body {
   background: #fff;
 }
 
-/* Updated grid-template-columns to fit the new tab */
 .topnav {
   display: grid;
   grid-template-columns: 180px 1fr 1fr 1fr 1fr 1fr;
@@ -260,7 +259,7 @@ body {
   font-size: 14px;
 }
 
-/* Main content — scrollable, no padding restriction */
+/* Main content */
 .main-content {
   background: #e8eaf6;
   overflow-y: auto;
@@ -327,7 +326,7 @@ body {
   text-transform: none;
 }
 
-/* Static sections — just a label + fixed short text area */
+/* Static sections */
 .home-section {
   background: #fff;
   border: 1px solid #dde2ea;
@@ -386,41 +385,70 @@ body {
   color: #222;
 }
 
-.catalogue-grid {
+/* New Catalogue Layout */
+.catalogue-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  grid-template-columns: 1fr 220px;
+  gap: 20px;
 }
 
-.cat-card {
-  background: #fafafa;
-  border: 1px solid #e0e4ea;
-  padding: 12px;
+.catalogue-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cat-btn {
+  background: #ee2222;
+  color: #fff;
+  padding: 15px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: left;
   cursor: pointer;
-  transition: all 0.18s;
+  border: none;
+  border-radius: 4px;
+  transition: background 0.2s, transform 0.1s;
 }
 
-.cat-card:hover {
-  border-color: #2222cc;
-  background: #f0f2ff;
+.cat-btn:hover {
+  background: #cc1111;
   transform: translateY(-2px);
-  box-shadow: 0 3px 10px #2222cc18;
+  box-shadow: 0 4px 10px rgba(238, 34, 34, 0.2);
 }
 
-.cat-card:active {
-  transform: scale(0.97);
+.cat-btn:active {
+  transform: translateY(0);
 }
 
-.cat-title {
-  font-size: 13px;
-  font-weight: 500;
-  color: #222;
+.catalogue-side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.cat-sub {
-  font-size: 11px;
-  color: #aaa;
-  margin-top: 3px;
+.cat-info-box {
+  border: 2px solid #555;
+  padding: 20px 15px;
+  text-align: center;
+  font-size: 12px;
+  color: #333;
+  background: #fff;
+  line-height: 1.5;
+}
+
+.cat-info-box .warning-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.cat-stats-number {
+  font-size: 22px;
+  color: #ee2222;
+  margin: 8px 0;
+  font-weight: 600;
 }
 
 /* Ad panel */
