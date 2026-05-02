@@ -9,13 +9,9 @@
 <body>
 <div class="portal">
   <nav class="topnav">
-    <div class="logo-box" onclick="goHome()">
-      <span id="logo-text">LOGO.PNG</span>
-      <img id="logo-img" src="" alt="Logo" style="display:none;"/>
-    </div>
+    <div class="logo-box" onclick="goHome()">LOGO.PNG</div>
     <div class="nav-item" id="nav-profile"   onclick="showPage('profile',this)">Agent Profile</div>
     <div class="nav-item active" id="nav-catalogue" onclick="showPage('catalogue',this)">Catalogue</div>
-    <div class="nav-item" id="nav-assignments" onclick="showPage('assignments',this)">Assignments</div>
     <div class="nav-item" id="nav-chatlog"   onclick="showPage('chatlog',this)">Chat Log</div>
     <div class="nav-item" id="nav-about"     onclick="showPage('about',this)">About Us</div>
   </nav>
@@ -31,9 +27,9 @@
       </div>
       <div class="agent-badge">Newly Assigned Agent</div>
       <div class="pending-row"><div class="red-sq"></div> Pending Assignments</div>
-      <div class="sidebar-divider"></div>
+      <div class="divider"></div>
       <div class="section-label">About You:</div>
-      <div class="sidebar-link" id="sl-personals"   onclick="showPage('personals',this,'sidebar')"><span class="chevron">›</span> Personals</div>
+      <div class="sidebar-link" id="sl-personals" onclick="showPage('personals',this,'sidebar')"><span class="chevron">›</span> Personals</div>
       <div class="sidebar-link" id="sl-evaluations" onclick="showPage('evaluations',this,'sidebar')"><span class="chevron">›</span> Evaluations</div>
       <div class="dropdown-item">
         <div class="dropdown-header" id="dh-simulations" onclick="toggleDropdown('simulations')">
@@ -50,37 +46,27 @@
 
     <main class="main-content">
 
-      <!-- HOMEPAGE -->
       <div class="page-panel active" id="page-home">
-        <div class="home-banner-slot">
-          <img id="banner-img" src="" alt="Banner" style="display:none;" onerror="this.style.display='none';document.getElementById('banner-ph').style.display='flex';"/>
-          <div id="banner-ph" class="home-banner-placeholder">
-            🖼 Homepage Banner
-            <span>1400 × 500 px</span>
+        <div class="home-banner">Hompag</div>
+
+        <div class="home-section">
+          <div class="home-section-divider" id="div-faqs" onclick="toggleSection('faqs')">
+            FAQS <span class="div-arrow">›</span>
+          </div>
+          <div class="home-section-body" id="body-faqs">
+            <div class="section-row"><div class="section-row-label">hakdog????</div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa incidunt iure quam. Illo, ratione id! Quo ipsum qui temporibus ex nam voluptatum. Quod, vitae rem odit commodi blanditiis quis libero!</div>
+            <div class="section-row"><div class="section-row-label">itlog???</div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis magni cum delectus, nobis perspiciatis laudantium fugit excepturi iste impedit reprehenderit inventore magnam, alias exercitationem porro quaerat molestias voluptatem, nam neque.</div>
+            <div class="section-row"><div class="section-row-label">TOCINO????</div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore ipsam beatae ab asperiores atque iure mollitia dolorem temporibus, alias accusamus. Placeat optio voluptatum tempora aspernatur fugit explicabo odio delectus? Voluptatibus.</div>
+            <div class="section-row"><div class="section-row-label">ANU nA</div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis explicabo neque vero obcaecati excepturi laborum totam alias cupiditate? Placeat a perferendis magni ex! Qui quo velit expedita, tenetur accusantium ullam.</div>
           </div>
         </div>
 
         <div class="home-section">
-          <div class="home-section-divider">FAQS</div>
-          <div class="home-section-body">
-            Q: How do I update my agent profile?<br>
-            A: Navigate to Agent Profile in the top nav and edit your details directly.<br><br>
-            Q: Where can I find my assignments?<br>
-            A: Pending assignments are visible in the sidebar at all times.<br><br>
-            Q: Who do I contact for support?<br>
-            A: Use the Chat Log tab for direct agent support.
+          <div class="home-section-divider" id="div-memos" onclick="toggleSection('memos')">
+            LATEST MEMOS <span class="div-arrow">›</span>
           </div>
-        </div>
-
-        <div class="home-section">
-          <div class="home-section-divider">LATEST MEMOS</div>
-          <div class="home-section-body">
-            <strong>Apr 28, 2026 — Field Evaluations Deadline</strong><br>
-            All agents must complete field evaluations by end of Q2.<br><br>
-            <strong>Apr 20, 2026 — New Evaluation Format</strong><br>
-            The psychological evaluation format has been updated. Review before your next session.<br><br>
-            <strong>Apr 10, 2026 — Team Building Sessions</strong><br>
-            Scheduled for May. Check with your team lead for your time slot.
+          <div class="home-section-body" id="body-memos">
+            <div class="section-row"><div class="section-row-label">dsfs</div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam magni earum, eveniet ipsa voluptas facilis ut ex consectetur? Culpa harum laudantium distinctio eaque vitae cum doloremque molestiae qui nostrum porro.</div>
           </div>
         </div>
       </div>
@@ -94,62 +80,36 @@
           <div class="profile-row"><span class="profile-label">Assignment</span><span style="color:#ee2222;">Pending</span></div>
         </div>
       </div>
-      
-      <!-- UPDATED CATALOGUE PAGE -->
       <div class="page-panel" id="page-catalogue">
-        <div class="content-card">
-          <div class="card-title">Catalogue</div>
-          <div class="catalogue-container">
-            
-            <div class="catalogue-buttons">
-              <button class="cat-btn">Dimension Records</button>
-              <button class="cat-btn">Anomalous Scenes</button>
-              <button class="cat-btn">Special Personnels</button>
-              <button class="cat-btn">Cases</button>
-            </div>
-
-            <div class="catalogue-side">
-              <div class="cat-info-box">
-                <div class="warning-icon">⚠️</div>
-                <div>Due to limited entries, Document request are only to be entertained in person.</div>
-              </div>
-              <div class="cat-info-box">
-                <div>Catalog Entries</div>
-                <div class="cat-stats-number">8</div>
-                <div style="margin-top:15px;">Existing Archive Records:</div>
-                <div class="cat-stats-number">194,108</div>
-              </div>
-            </div>
-
+        <div class="content-card"><div class="card-title">Catalogue</div>
+          <div class="catalogue-grid">
+            <div class="cat-card"><div class="cat-title">Item 001</div><div class="cat-sub">Category A</div></div>
+            <div class="cat-card"><div class="cat-title">Item 002</div><div class="cat-sub">Category B</div></div>
+            <div class="cat-card"><div class="cat-title">Item 003</div><div class="cat-sub">Category A</div></div>
+            <div class="cat-card"><div class="cat-title">Item 004</div><div class="cat-sub">Category C</div></div>
+            <div class="cat-card"><div class="cat-title">Item 005</div><div class="cat-sub">Category B</div></div>
+            <div class="cat-card"><div class="cat-title">Item 006</div><div class="cat-sub">Category C</div></div>
           </div>
         </div>
       </div>
-      
-      <div class="page-panel" id="page-assignments">
-        <div class="content-card">
-          <div class="card-title">Assignments</div>
-          <div style="font-size:13px;color:#aaa;">Pending and past assignments will appear here.</div>
-        </div>
-      </div>
-
-      <div class="page-panel" id="page-chatlog"><div class="content-card"><div class="card-title">Chat Log</div><div style="font-size:13px;color:#aaa;">No recent messages.</div></div></div>
-      <div class="page-panel" id="page-about"><div class="content-card"><div class="card-title">About Us</div><div style="font-size:13px;color:#666;line-height:1.8;">Welcome to the Agent Portal.</div></div></div>
-      <div class="page-panel" id="page-personals"><div class="content-card"><div class="card-title">Personals</div><div style="font-size:13px;color:#aaa;">Personal information will appear here.</div></div></div>
-      <div class="page-panel" id="page-evaluations"><div class="content-card"><div class="card-title">Evaluations</div><div style="font-size:13px;color:#aaa;">Evaluation records will appear here.</div></div></div>
-      <div class="page-panel" id="page-simulations"><div class="content-card"><div class="card-title">Simulation Summaries</div><div style="font-size:13px;color:#aaa;">Simulation data will appear here.</div></div></div>
-      <div class="page-panel" id="page-psych"><div class="content-card"><div class="card-title">Psychological Evaluation</div><div style="font-size:13px;color:#aaa;">Evaluation records will appear here.</div></div></div>
-      <div class="page-panel" id="page-field"><div class="content-card"><div class="card-title">Field Work</div><div style="font-size:13px;color:#aaa;">Field work logs will appear here.</div></div></div>
-      <div class="page-panel" id="page-team"><div class="content-card"><div class="card-title">Team Building</div><div style="font-size:13px;color:#aaa;">Team building records will appear here.</div></div></div>
+      <div class="page-panel" id="page-chatlog"><div class="content-card"><div class="card-title">Chat Log</div><div style="font-size:13px;color:#aaa;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo eos libero rem laudantium quasi architecto veritatis nesciunt voluptate iste suscipit optio dolore minus beatae debitis in placeat, officiis eligendi rerum!</div></div></div>
+      <div class="page-panel" id="page-about"><div class="content-card"><div class="card-title">About Us</div><div style="font-size:13px;color:#666;line-height:1.8;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi omnis quia nisi, delectus minima quaerat illo adipisci mollitia, autem qui consequatur ipsum ab voluptate quasi incidunt, est iure praesentium! Voluptatibus.</div></div></div>
+      <div class="page-panel" id="page-personals"><div class="content-card"><div class="card-title">Personals</div><div style="font-size:13px;color:#aaa;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, quaerat earum. Debitis quos vel dicta quibusdam dolorem cupiditate praesentium earum, necessitatibus, similique et velit laborum magni expedita, dolor error ad!</div></div></div>
+      <div class="page-panel" id="page-evaluations"><div class="content-card"><div class="card-title">Evaluations</div><div style="font-size:13px;color:#aaa;">Lorem ipsum dolor sit amet consectetur adipisicing elit. A error blanditiis laudantium dignissimos veniam nesciunt, velit animi nulla explicabo ad. Molestiae exercitationem voluptate ipsam excepturi explicabo corporis recusandae incidunt a.</div></div></div>
+      <div class="page-panel" id="page-simulations"><div class="content-card"><div class="card-title">Simulation Summaries</div><div style="font-size:13px;color:#aaa;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, illo obcaecati vitae facilis placeat, explicabo labore at quibusdam incidunt dolor adipisci. Sit neque, repellendus iste ex iure nesciunt doloribus explicabo?</div></div></div>
+      <div class="page-panel" id="page-psych"><div class="content-card"><div class="card-title">Psychological Evaluation</div><div style="font-size:13px;color:#aaa;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati itaque, iste libero consequatur tempore atque nostrum voluptates omnis nam quae, rem numquam sit quisquam molestiae alias excepturi. Nulla, sunt commodi?</div></div></div>
+      <div class="page-panel" id="page-field"><div class="content-card"><div class="card-title">Field Work</div><div style="font-size:13px;color:#aaa;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, ipsa consequuntur in quod voluptatum, totam vero beatae temporibus architecto fugiat porro, laboriosam laudantium sunt! Quas consectetur exercitationem laudantium minima. Excepturi.</div></div></div>
+      <div class="page-panel" id="page-team"><div class="content-card"><div class="card-title">Team Building</div><div style="font-size:13px;color:#aaa;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, soluta velit? Fuga dolor consequuntur laboriosam, quos maiores natus molestiae labore vitae dicta voluptatem magni voluptates, nobis fugit cupiditate corporis provident?</div></div></div>
     </main>
 
     <div class="ads-panel">
       <div class="ad-slot">
         <img id="ad-img" src="" alt="Ad" onerror="this.style.display='none';document.getElementById('ad-ph').style.display='flex';" style="display:none;"/>
         <div id="ad-ph" class="ad-placeholder">
-          <div class="ad-icon">🖼</div>
-          <div class="ad-label">Advertisement</div>
-          <div class="ad-hint">Your<br>ad-banner.png<br>here</div>
-          <div class="ad-dim">160 × 556 px</div>
+          <div class="ad-icon">insert magnus geting abused</div>
+          <div class="ad-label">switch switch adverts</div>
+          <div class="ad-hint">weewoo</div>
+          <div class="ad-dim">160 × 560 px</div>
         </div>
       </div>
     </div>

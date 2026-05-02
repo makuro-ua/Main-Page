@@ -6,9 +6,24 @@ function goHome() {
   document.querySelectorAll('.dropdown-sub').forEach(s => s.classList.remove('active'));
 }
 
+function toggleSection(id) {
+  const divider = document.getElementById('div-' + id);
+  const body = document.getElementById('body-' + id);
+  const isOpen = body.classList.contains('open');
+  if (isOpen) {
+    body.style.maxHeight = '0';
+    body.classList.remove('open');
+    divider.classList.remove('open');
+  } else {
+    body.style.maxHeight = body.scrollHeight + 'px';
+    body.classList.add('open');
+    divider.classList.add('open');
+  }
+}
+
 function toggleDropdown(id) {
-  const body   = document.getElementById('db-' + id);
-  const arrow  = document.getElementById('arrow-' + id);
+  const body = document.getElementById('db-' + id);
+  const arrow = document.getElementById('arrow-' + id);
   const header = document.getElementById('dh-' + id);
   const isOpen = body.classList.contains('open');
   if (isOpen) {
@@ -38,6 +53,9 @@ function showPage(id, el, type) {
   if (type === 'sub' && el) el.classList.add('active');
 }
 
-window.setLogo    = src => { document.getElementById('logo-text').style.display='none'; const i=document.getElementById('logo-img'); i.style.display='block'; i.src=src; }
-window.setBanner  = src => { document.getElementById('banner-ph').style.display='none'; const i=document.getElementById('banner-img'); i.style.display='block'; i.src=src; }
-window.setAdImage = src => { document.getElementById('ad-ph').style.display='none'; const i=document.getElementById('ad-img'); i.style.display='block'; i.src=src; }
+window.setAdImage = function(src) {
+  document.getElementById('ad-ph').style.display = 'none';
+  const img = document.getElementById('ad-img');
+  img.style.display = 'block';
+  img.src = src;
+}
