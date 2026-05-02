@@ -15,10 +15,7 @@
     </div>
     <div class="nav-item" id="nav-profile"   onclick="showPage('profile',this)">Agent Profile</div>
     <div class="nav-item active" id="nav-catalogue" onclick="showPage('catalogue',this)">Catalogue</div>
-    
-    <!-- New Assignments Tab Added Here -->
     <div class="nav-item" id="nav-assignments" onclick="showPage('assignments',this)">Assignments</div>
-    
     <div class="nav-item" id="nav-chatlog"   onclick="showPage('chatlog',this)">Chat Log</div>
     <div class="nav-item" id="nav-about"     onclick="showPage('about',this)">About Us</div>
   </nav>
@@ -97,20 +94,37 @@
           <div class="profile-row"><span class="profile-label">Assignment</span><span style="color:#ee2222;">Pending</span></div>
         </div>
       </div>
+      
+      <!-- UPDATED CATALOGUE PAGE -->
       <div class="page-panel" id="page-catalogue">
-        <div class="content-card"><div class="card-title">Catalogue</div>
-          <div class="catalogue-grid">
-            <div class="cat-card"><div class="cat-title">Item 001</div><div class="cat-sub">Category A</div></div>
-            <div class="cat-card"><div class="cat-title">Item 002</div><div class="cat-sub">Category B</div></div>
-            <div class="cat-card"><div class="cat-title">Item 003</div><div class="cat-sub">Category A</div></div>
-            <div class="cat-card"><div class="cat-title">Item 004</div><div class="cat-sub">Category C</div></div>
-            <div class="cat-card"><div class="cat-title">Item 005</div><div class="cat-sub">Category B</div></div>
-            <div class="cat-card"><div class="cat-title">Item 006</div><div class="cat-sub">Category C</div></div>
+        <div class="content-card">
+          <div class="card-title">Catalogue</div>
+          <div class="catalogue-container">
+            
+            <div class="catalogue-buttons">
+              <button class="cat-btn">Dimension Records</button>
+              <button class="cat-btn">Anomalous Scenes</button>
+              <button class="cat-btn">Special Personnels</button>
+              <button class="cat-btn">Cases</button>
+            </div>
+
+            <div class="catalogue-side">
+              <div class="cat-info-box">
+                <div class="warning-icon">⚠️</div>
+                <div>Due to limited entries, Document request are only to be entertained in person.</div>
+              </div>
+              <div class="cat-info-box">
+                <div>Catalog Entries</div>
+                <div class="cat-stats-number">8</div>
+                <div style="margin-top:15px;">Existing Archive Records:</div>
+                <div class="cat-stats-number">194,108</div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
       
-      <!-- New Assignments Content Panel -->
       <div class="page-panel" id="page-assignments">
         <div class="content-card">
           <div class="card-title">Assignments</div>
