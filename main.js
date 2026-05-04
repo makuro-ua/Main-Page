@@ -1,3 +1,37 @@
+const LOADING_MSGS = {
+  personals:   ['Retrieving personal records...','Establishing secure connection...','Authenticating credentials...','Fetching archived data...','Decrypting file index...','Access denied — retrying...','Almost there...'],
+  evaluations: ['Retrieving evaluation records...','Establishing secure connection...','Authenticating credentials...','Fetching performance data...','Decrypting score index...','Synchronising with server...','Almost there...'],
+  simulations: ['Retrieving simulation data...','Establishing secure connection...','Authenticating credentials...','Loading simulation logs...','Decrypting run index...','Synchronising results...','Almost there...'],
+};
+const loadingTimers = {};
+
+function startLoading(id) {
+  const msgs    = LOADING_MSGS[id];
+  const spinner = document.getElementById(id + '-spinner');
+  const status  = document.getElementById(id + '-status');
+  const retry   = document.getElementById(id + '-retry');
+  if (!spinner) return;
+  let phase = 0;
+  spinner.style.display = 'block';
+  retry.style.display   = 'none';
+  status.textContent    = msgs[0];
+  if (loadingTimers[id]) clearInterval(loadingTimers[id]);
+  loadingTimers[id] = setInterval(() => {
+    phase++;
+    if (phase < msgs.length) {
+      status.textContent = msgs[phase];
+    } else {
+      clearInterval(loadingTimers[id]);
+      loadingTimers[id] = null;
+      spinner.style.display = 'none';
+      status.textContent    = 'Connection failed. Unable to retrieve records.';
+      retry.style.display   = 'block';
+    }
+  }, 1400);
+}
+
+function retryLoading(id) { startLoading(id); }
+
 // ── Chat Log ─────────────────────────────────────────────────────────────────
 function openChat(id) {
   document.getElementById('chat-preview-' + id).style.display = 'none';
@@ -186,6 +220,7 @@ function showPage(id, el, type) {
   const panel = document.getElementById('page-' + id);
   if (panel) panel.classList.add('active');
   if (id === 'cases') setTimeout(startCasesLoop, 80);
+  if (['personals','evaluations','simulations'].includes(id)) setTimeout(() => startLoading(id), 80);
   if (type !== 'sidebar' && type !== 'sub') {
     document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
     if (el) { el.classList.add('active'); el.classList.remove('clicked'); void el.offsetWidth; el.classList.add('clicked'); }
@@ -199,6 +234,41 @@ function showPage(id, el, type) {
 window.setLogo    = src => { document.getElementById('logo-text').style.display='none'; const i=document.getElementById('logo-img'); i.style.display='block'; i.src=src; }
 window.setBanner  = src => { document.getElementById('banner-ph').style.display='none'; const i=document.getElementById('banner-img'); i.style.display='block'; i.src=src; }
 window.setAdImage = src => { document.getElementById('ad-ph').style.display='none'; const i=document.getElementById('ad-img'); i.style.display='block'; i.src=src; }
+
+// Auto-show all pre-set images on page load
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('img[src]').forEach(function(img) {
+    if (img.src && img.getAttribute('src') !== '') {
+      img.style.display = 'block';
+      var ph = img.nextElementSibling;
+      if (ph) ph.style.display = 'none';
+    }
+  });
+  // Logo
+  var logoImg = document.getElementById('logo-img');
+  if (logoImg && logoImg.getAttribute('src')) {
+    document.getElementById('logo-text').style.display = 'none';
+    logoImg.style.display = 'block';
+  }
+  // Banner
+  var bannerImg = document.getElementById('banner-img');
+  if (bannerImg && bannerImg.getAttribute('src')) {
+    document.getElementById('banner-ph').style.display = 'none';
+    bannerImg.style.display = 'block';
+  }
+  // Ad
+  var adImg = document.getElementById('ad-img');
+  if (adImg && adImg.getAttribute('src')) {
+    document.getElementById('ad-ph').style.display = 'none';
+    adImg.style.display = 'block';
+  }
+  // About director
+  var aboutPfp = document.getElementById('about-pfp-img');
+  if (aboutPfp && aboutPfp.getAttribute('src')) {
+    document.getElementById('about-pfp-ph').style.display = 'none';
+    aboutPfp.style.display = 'block';
+  }
+});
 
 // Expose so images can be set externally per dimension
 window.setDimImage = (id, src) => {

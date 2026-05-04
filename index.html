@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>DSS Log-In Page</title>
-  <link rel="stylesheet" href="main.css" />
-  <script src="main.js"></script>
-</head>
-<body>
 <div class="portal">
   <nav class="topnav">
     <div class="logo-box" onclick="goHome()">
       <span id="logo-text">LOGO.PNG</span>
-      <img id="logo-img" src="images/logo.jpg" alt="Logo" style="display:none;"/>
+      <img id="logo-img" src="logo.jpg" alt="Logo" style="display:none;"/>
     </div>
     <div class="nav-item" id="nav-profile"     onclick="showPage('profile',this)">Agent Profile</div>
     <div class="nav-item active" id="nav-catalogue"  onclick="showPage('catalogue',this)">Catalogue</div>
@@ -23,7 +14,7 @@
   <div class="body-area">
     <aside class="sidebar">
       <div style="display:flex;align-items:center;gap:10px;">
-        <div class="avatar"></div>
+        <div class="avatar" style="overflow:hidden;"><img src="1.jpg" alt="User" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';"/></div>
         <div>
           <div class="user-name">Username</div>
           <div class="user-sub">Agent Numer</div>
@@ -53,7 +44,10 @@
       <!-- HOMEPAGE -->
       <div class="page-panel" id="page-home">
         <div class="home-banner-slot">
-          <img id="banner-img" src="images/banner.jpg" alt="Banner" style="display:none;" onerror="this.style.display='none';document.getElementById('banner-ph').style.display='flex';"/>
+          <img id="banner-img" src="banner.jpg" alt="Banner" style="display:none;" onerror="this.style.display='none';document.getElementById('banner-ph').style.display='flex';"/>
+          <div id="banner-ph" class="home-banner-placeholder">
+            🖼 Homepage Banner
+            <span>1400 × 500 px</span>
           </div>
         </div>
         <div class="home-section">
@@ -117,7 +111,7 @@
           <div class="dim-gallery">
             <div class="dim-card" onclick="openDimension('the-world')">
               <div class="dim-portrait-wrap">
-                <img class="dim-portrait" id="dim-img-the-world" src="" alt="The World" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="dim-portrait" id="dim-img-the-world" src="3.jpg" alt="The World" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="dim-portrait-ph" id="dim-ph-the-world">🖼</div>
                 <div class="dim-card-overlay">VIEW RECORD</div>
               </div>
@@ -125,7 +119,7 @@
             </div>
             <div class="dim-card" onclick="openDimension('bluebells')">
               <div class="dim-portrait-wrap">
-                <img class="dim-portrait" id="dim-img-bluebells" src="" alt="Bluebell's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="dim-portrait" id="dim-img-bluebells" src="3.jpg" alt="Bluebell's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="dim-portrait-ph" id="dim-ph-bluebells">🖼</div>
                 <div class="dim-card-overlay">VIEW RECORD</div>
               </div>
@@ -133,7 +127,7 @@
             </div>
             <div class="dim-card" onclick="openDimension('unrds')">
               <div class="dim-portrait-wrap">
-                <img class="dim-portrait" id="dim-img-unrds" src="" alt="Unrd's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="dim-portrait" id="dim-img-unrds" src="3.jpg" alt="Unrd's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="dim-portrait-ph" id="dim-ph-unrds">🖼</div>
                 <div class="dim-card-overlay">VIEW RECORD</div>
               </div>
@@ -152,7 +146,7 @@
           </div>
           <div class="dim-detail">
             <div class="dim-detail-portrait-wrap">
-              <img class="dim-detail-portrait" id="dim-detail-img-the-world" src="" alt="The World" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="dim-detail-portrait" id="dim-detail-img-the-world" src="3.jpg" alt="The World" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="dim-detail-portrait-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -171,7 +165,7 @@
           </div>
           <div class="dim-detail">
             <div class="dim-detail-portrait-wrap">
-              <img class="dim-detail-portrait" id="dim-detail-img-bluebells" src="" alt="Bluebell's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="dim-detail-portrait" id="dim-detail-img-bluebells" src="3.jpg" alt="Bluebell's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="dim-detail-portrait-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -190,7 +184,7 @@
           </div>
           <div class="dim-detail">
             <div class="dim-detail-portrait-wrap">
-              <img class="dim-detail-portrait" id="dim-detail-img-unrds" src="" alt="Unrd's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="dim-detail-portrait" id="dim-detail-img-unrds" src="3.jpg" alt="Unrd's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="dim-detail-portrait-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -211,24 +205,27 @@
 
             <div class="scene-row" onclick="openScene('lord')">
               <div class="scene-landscape-wrap">
-                <img class="scene-landscape" id="scene-img-lord" src="" alt="The Lord" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="scene-landscape" id="scene-img-lord" src="4.jpg" alt="The Lord" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="scene-landscape-ph">🖼</div>
                 <div class="scene-overlay">VIEW RECORD</div>
               </div>
               <div class="scene-label">
                 <div class="scene-name">The Lord(?)</div>
                 <div class="scene-sub">(Monoworld)</div>
+                <div class="scene-desc">Classification: Anomalous Entity. A solitary presence observed within a sealed monoworld dimension. Threat index remains unconfirmed. All agents are advised to exercise extreme caution. Document requests must be made in person.</div>
               </div>
             </div>
 
             <div class="scene-row" onclick="openScene('threaders')">
               <div class="scene-landscape-wrap">
-                <img class="scene-landscape" id="scene-img-threaders" src="" alt="The Threaders" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="scene-landscape" id="scene-img-threaders" src="4.jpg" alt="The Threaders" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="scene-landscape-ph">🖼</div>
                 <div class="scene-overlay">VIEW RECORD</div>
               </div>
               <div class="scene-label">
                 <div class="scene-name">The Threaders</div>
+                <div class="scene-sub">(Mobile / Migratory)</div>
+                <div class="scene-desc">Classification: Anomalous Entity. A mobile, migratory cluster capable of traversing dimensional boundaries. Threat index rated High. Active containment protocols are in effect. Field agents must report all sightings immediately.</div>
               </div>
             </div>
 
@@ -245,7 +242,7 @@
           </div>
           <div class="scene-detail">
             <div class="scene-detail-landscape-wrap">
-              <img class="scene-detail-landscape" id="scene-detail-img-lord" src="" alt="The Lord" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="scene-detail-landscape" id="scene-detail-img-lord" src="4.jpg" alt="The Lord" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="scene-detail-landscape-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -264,7 +261,7 @@
           </div>
           <div class="scene-detail">
             <div class="scene-detail-landscape-wrap">
-              <img class="scene-detail-landscape" id="scene-detail-img-threaders" src="" alt="The Threaders" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="scene-detail-landscape" id="scene-detail-img-threaders" src="4.jpg" alt="The Threaders" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="scene-detail-landscape-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -284,7 +281,7 @@
           <div class="dim-gallery">
             <div class="dim-card" onclick="openPersonnel('heaves')">
               <div class="dim-portrait-wrap">
-                <img class="dim-portrait" id="per-img-heaves" src="" alt="Dr. Heaves" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="dim-portrait" id="per-img-heaves" src="4.jpg" alt="Dr. Heaves" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="dim-portrait-ph">🖼</div>
                 <div class="dim-card-overlay">VIEW RECORD</div>
               </div>
@@ -292,7 +289,7 @@
             </div>
             <div class="dim-card" onclick="openPersonnel('rasputin')">
               <div class="dim-portrait-wrap">
-                <img class="dim-portrait" id="per-img-rasputin" src="" alt="Rasputin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="dim-portrait" id="per-img-rasputin" src="4.jpg" alt="Rasputin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="dim-portrait-ph">🖼</div>
                 <div class="dim-card-overlay">VIEW RECORD</div>
               </div>
@@ -300,7 +297,7 @@
             </div>
             <div class="dim-card" onclick="openPersonnel('booker')">
               <div class="dim-portrait-wrap">
-                <img class="dim-portrait" id="per-img-booker" src="" alt="Dr. Booker" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="dim-portrait" id="per-img-booker" src="4.jpg" alt="Dr. Booker" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="dim-portrait-ph">🖼</div>
                 <div class="dim-card-overlay">VIEW RECORD</div>
               </div>
@@ -319,7 +316,7 @@
           </div>
           <div class="dim-detail">
             <div class="dim-detail-portrait-wrap">
-              <img class="dim-detail-portrait" id="per-detail-img-heaves" src="" alt="Dr. Heaves" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="dim-detail-portrait" id="per-detail-img-heaves" src="4.jpg" alt="Dr. Heaves" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="dim-detail-portrait-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -338,7 +335,7 @@
           </div>
           <div class="dim-detail">
             <div class="dim-detail-portrait-wrap">
-              <img class="dim-detail-portrait" id="per-detail-img-rasputin" src="" alt="Rasputin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="dim-detail-portrait" id="per-detail-img-rasputin" src="4.jpg" alt="Rasputin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="dim-detail-portrait-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -357,7 +354,7 @@
           </div>
           <div class="dim-detail">
             <div class="dim-detail-portrait-wrap">
-              <img class="dim-detail-portrait" id="per-detail-img-booker" src="" alt="Dr. Booker" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="dim-detail-portrait" id="per-detail-img-booker" src="4.jpg" alt="Dr. Booker" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="dim-detail-portrait-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -397,12 +394,36 @@
           </div>
 
           <div class="profile-box" style="margin-top:14px;">
-            <div class="profile-box-label">DETAILED RECORDS</div>
+            <div class="profile-box-label">PHYSICAL INFORMATION</div>
+            <div class="profile-row"><span class="profile-label">Age</span><span class="profile-value">—</span></div>
+            <div class="profile-row"><span class="profile-label">Date of Birth</span><span class="profile-value">—</span></div>
+            <div class="profile-row"><span class="profile-label">Height</span><span class="profile-value">—</span></div>
+            <div class="profile-row"><span class="profile-label">Weight</span><span class="profile-value">—</span></div>
+            <div class="profile-row"><span class="profile-label">Eye Color</span><span class="profile-value">—</span></div>
+            <div class="profile-row"><span class="profile-label">Hair Color</span><span class="profile-value">—</span></div>
+            <div class="profile-row"><span class="profile-label">Build</span><span class="profile-value">—</span></div>
+            <div class="profile-row"><span class="profile-label">Distinguishing</span><span class="profile-value">—</span></div>
+          </div>
+
+          <div class="profile-box" style="margin-top:14px;">
+            <div class="profile-box-label">OPERATIONAL RECORDS</div>
             <div class="profile-row"><span class="profile-label">Date Enlisted</span><span class="profile-value">—</span></div>
             <div class="profile-row"><span class="profile-label">Handler</span><span class="profile-value">—</span></div>
             <div class="profile-row"><span class="profile-label">Field Rating</span><span class="profile-value">—</span></div>
             <div class="profile-row"><span class="profile-label">Psych Score</span><span class="profile-value">—</span></div>
             <div class="profile-row"><span class="profile-label">Sim. Completed</span><span class="profile-value">0</span></div>
+            <div class="profile-row"><span class="profile-label">Missions</span><span class="profile-value">0</span></div>
+            <div class="profile-row"><span class="profile-label">Infractions</span><span class="profile-value">0</span></div>
+          </div>
+
+          <div class="profile-box" style="margin-top:14px;">
+            <div class="profile-box-label">PERSONAL BACKGROUND</div>
+            <div class="profile-row"><span class="profile-label">Hometown</span><span class="profile-value">—</span></div>
+            <div class="profile-row"><span class="profile-label">Nationality</span><span class="profile-value">—</span></div>
+            <div class="profile-row"><span class="profile-label">Languages</span><span class="profile-value">—</span></div>
+            <div class="profile-row"><span class="profile-label">Education</span><span class="profile-value">—</span></div>
+            <div class="profile-row"><span class="profile-label">Prior Employ.</span><span class="profile-value">—</span></div>
+            <div class="profile-row"><span class="profile-label">Emergency Ctct</span><span class="profile-value">—</span></div>
             <div class="profile-row"><span class="profile-label">Notes</span><span class="profile-value" style="color:#c4a882;">No additional notes on file.</span></div>
           </div>
 
@@ -437,7 +458,7 @@
           <!-- Collapsed chat preview row -->
           <div class="chat-preview-row" id="chat-preview-kroive" onclick="openChat('kroive')">
             <div class="chat-preview-pfp">
-              <img id="chat-pfp-kroive" src="images/1.jpg" alt="A.Kroive.D" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img id="chat-pfp-kroive" src="4.jpg" alt="A.Kroive.D" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="chat-pfp-ph">🖼</div>
             </div>
             <div class="chat-preview-info">
@@ -458,7 +479,7 @@
             <div class="chat-thread-body">
               <div class="chat-msg-row">
                 <div class="chat-msg-pfp">
-                  <img src="" alt="A.Kroive.D" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                  <img src="4.jpg" alt="A.Kroive.D" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                   <div class="chat-pfp-ph" style="width:100%;height:100%;">🖼</div>
                 </div>
                 <div class="chat-msg-bubble">
@@ -487,7 +508,7 @@
           <!-- Director row -->
           <div class="about-director-row">
             <div class="about-pfp-wrap">
-              <img id="about-pfp-img" src="images/2.jpg" alt="Director" style="display:none; width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none';document.getElementById('about-pfp-ph').style.display='flex';"/>
+              <img id="about-pfp-img" src="2.jpg" alt="Director" style="display:none; width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none';document.getElementById('about-pfp-ph').style.display='flex';"/>
               <div id="about-pfp-ph" class="about-pfp-ph">🖼</div>
             </div>
             <div class="about-director-name-box">
@@ -510,9 +531,36 @@
 
         </div>
       </div>
-      <div class="page-panel" id="page-personals"><div class="content-card"><div class="card-title">Personals</div><div style="font-size:12px;color:#c4a882;">Personal information will appear here.</div></div></div>
-      <div class="page-panel" id="page-evaluations"><div class="content-card"><div class="card-title">Evaluations</div><div style="font-size:12px;color:#c4a882;">Evaluation records will appear here.</div></div></div>
-      <div class="page-panel" id="page-simulations"><div class="content-card"><div class="card-title">Simulation Summaries</div><div style="font-size:12px;color:#c4a882;">Simulation data will appear here.</div></div></div>
+      <div class="page-panel" id="page-personals">
+        <div class="content-card">
+          <div class="dim-header-bar"><div class="dim-title-box">PERSONALS</div></div>
+          <div class="cases-loading-area">
+            <div class="cases-spinner" id="personals-spinner"></div>
+            <div class="cases-status" id="personals-status">Retrieving personal records...</div>
+            <button class="cases-retry-btn" id="personals-retry" style="display:none;" onclick="retryLoading('personals')">↺ Try Again</button>
+          </div>
+        </div>
+      </div>
+      <div class="page-panel" id="page-evaluations">
+        <div class="content-card">
+          <div class="dim-header-bar"><div class="dim-title-box">EVALUATIONS</div></div>
+          <div class="cases-loading-area">
+            <div class="cases-spinner" id="evaluations-spinner"></div>
+            <div class="cases-status" id="evaluations-status">Retrieving evaluation records...</div>
+            <button class="cases-retry-btn" id="evaluations-retry" style="display:none;" onclick="retryLoading('evaluations')">↺ Try Again</button>
+          </div>
+        </div>
+      </div>
+      <div class="page-panel" id="page-simulations">
+        <div class="content-card">
+          <div class="dim-header-bar"><div class="dim-title-box">SIMULATION SUMMARIES</div></div>
+          <div class="cases-loading-area">
+            <div class="cases-spinner" id="simulations-spinner"></div>
+            <div class="cases-status" id="simulations-status">Retrieving simulation data...</div>
+            <button class="cases-retry-btn" id="simulations-retry" style="display:none;" onclick="retryLoading('simulations')">↺ Try Again</button>
+          </div>
+        </div>
+      </div>
       <div class="page-panel" id="page-psych"><div class="content-card"><div class="card-title">Psychological Evaluation</div><div style="font-size:12px;color:#c4a882;">Evaluation records will appear here.</div></div></div>
       <div class="page-panel" id="page-field"><div class="content-card"><div class="card-title">Field Work</div><div style="font-size:12px;color:#c4a882;">Field work logs will appear here.</div></div></div>
       <div class="page-panel" id="page-team"><div class="content-card"><div class="card-title">Team Building</div><div style="font-size:12px;color:#c4a882;">Team building records will appear here.</div></div></div>
@@ -520,7 +568,7 @@
 
     <div class="ads-panel">
       <div class="ad-slot">
-        <img id="ad-img" src="images/3.jpg" alt="Ad" onerror="this.style.display='none';document.getElementById('ad-ph').style.display='flex';" style="display:none;"/>
+        <img id="ad-img" src="1.jpg" alt="Ad" onerror="this.style.display='none';document.getElementById('ad-ph').style.display='flex';" style="display:none;"/>
         <div id="ad-ph" class="ad-placeholder">
           <div class="ad-icon">🖼</div>
           <div class="ad-label">Advertisement</div>
@@ -531,7 +579,3 @@
     </div>
   </div>
 </div>
-
-</body>
-</html>
-

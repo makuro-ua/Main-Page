@@ -435,6 +435,8 @@ body {
   flex-direction: column;
   gap: 14px;
   min-width: 180px;
+  align-items: center;
+  text-align: center;
 }
 
 .cat-notice {
@@ -970,6 +972,8 @@ body {
   gap: 52px;
   padding: 24px 12px 28px;
   align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .dim-card {
@@ -1228,6 +1232,15 @@ body {
 }
 
 .scene-row:hover .scene-name { color: #8b1a1a; }
+
+.scene-desc {
+  font-size: 11px;
+  color: #5a3010;
+  line-height: 1.7;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 6px;
+  max-width: 300px;
+}
 
 /* Scene detail */
 .scene-detail {
