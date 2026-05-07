@@ -11,7 +11,7 @@
   <nav class="topnav">
     <div class="logo-box" onclick="goHome()">
       <span id="logo-text">LOGO.PNG</span>
-      <img id="logo-img" src="logo.jpg" alt="Logo" style="display:none;"/>
+      <img id="logo-img" src="logo.png" alt="Logo" style="display:none;"/>
     </div>
     <div class="nav-item" id="nav-profile"     onclick="showPage('profile',this)">Agent Profile</div>
     <div class="nav-item active" id="nav-catalogue"  onclick="showPage('catalogue',this)">Catalogue</div>
@@ -23,7 +23,7 @@
   <div class="body-area">
     <aside class="sidebar">
       <div style="display:flex;align-items:center;gap:10px;">
-        <div class="avatar" style="overflow:hidden;"><img src="1.jpg" alt="User" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';"/></div>
+        <div class="avatar" style="overflow:hidden;"><img src="user-pfp.png" alt="User" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';"/></div>
         <div>
           <div class="user-name">Username</div>
           <div class="user-sub">Agent Numer</div>
@@ -51,9 +51,9 @@
     <main class="main-content">
 
       <!-- HOMEPAGE -->
-      <div class="page-panel" id="page-home">
+      <div class="page-panel active" id="page-home">
         <div class="home-banner-slot">
-          <img id="banner-img" src="banner.jpg" alt="Banner" style="display:none;" onerror="this.style.display='none';document.getElementById('banner-ph').style.display='flex';"/>
+          <img id="banner-img" src="homepage-banner.png" alt="Banner" style="display:none;" onerror="this.style.display='none';document.getElementById('banner-ph').style.display='flex';"/>
           <div id="banner-ph" class="home-banner-placeholder">
             🖼 Homepage Banner
             <span>1400 × 500 px</span>
@@ -84,7 +84,7 @@
       </div>
 
       <!-- CATALOGUE -->
-      <div class="page-panel active" id="page-catalogue">
+      <div class="page-panel" id="page-catalogue">
         <div class="content-card">
           <div class="card-title">Catalogue</div>
           <div class="catalogue-layout">
@@ -120,7 +120,7 @@
           <div class="dim-gallery">
             <div class="dim-card" onclick="openDimension('the-world')">
               <div class="dim-portrait-wrap">
-                <img class="dim-portrait" id="dim-img-the-world" src="3.jpg" alt="The World" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="dim-portrait" id="dim-img-the-world" src="dim-record-1.png" alt="The World" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="dim-portrait-ph" id="dim-ph-the-world">🖼</div>
                 <div class="dim-card-overlay">VIEW RECORD</div>
               </div>
@@ -128,7 +128,7 @@
             </div>
             <div class="dim-card" onclick="openDimension('bluebells')">
               <div class="dim-portrait-wrap">
-                <img class="dim-portrait" id="dim-img-bluebells" src="3.jpg" alt="Bluebell's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="dim-portrait" id="dim-img-bluebells" src="dim-record-2.png" alt="Bluebell's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="dim-portrait-ph" id="dim-ph-bluebells">🖼</div>
                 <div class="dim-card-overlay">VIEW RECORD</div>
               </div>
@@ -136,7 +136,7 @@
             </div>
             <div class="dim-card" onclick="openDimension('unrds')">
               <div class="dim-portrait-wrap">
-                <img class="dim-portrait" id="dim-img-unrds" src="3.jpg" alt="Unrd's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="dim-portrait" id="dim-img-unrds" src="dim-record-3.png" alt="Unrd's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="dim-portrait-ph" id="dim-ph-unrds">🖼</div>
                 <div class="dim-card-overlay">VIEW RECORD</div>
               </div>
@@ -155,7 +155,7 @@
           </div>
           <div class="dim-detail">
             <div class="dim-detail-portrait-wrap">
-              <img class="dim-detail-portrait" id="dim-detail-img-the-world" src="3.jpg" alt="The World" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="dim-detail-portrait" id="dim-detail-img-the-world" src="dim-record-1.png" alt="The World" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="dim-detail-portrait-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -174,7 +174,7 @@
           </div>
           <div class="dim-detail">
             <div class="dim-detail-portrait-wrap">
-              <img class="dim-detail-portrait" id="dim-detail-img-bluebells" src="3.jpg" alt="Bluebell's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="dim-detail-portrait" id="dim-detail-img-bluebells" src="dim-record-2.png" alt="Bluebell's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="dim-detail-portrait-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -193,7 +193,7 @@
           </div>
           <div class="dim-detail">
             <div class="dim-detail-portrait-wrap">
-              <img class="dim-detail-portrait" id="dim-detail-img-unrds" src="3.jpg" alt="Unrd's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="dim-detail-portrait" id="dim-detail-img-unrds" src="dim-record-3.png" alt="Unrd's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="dim-detail-portrait-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -214,7 +214,7 @@
 
             <div class="scene-row" onclick="openScene('lord')">
               <div class="scene-landscape-wrap">
-                <img class="scene-landscape" id="scene-img-lord" src="4.jpg" alt="The Lord" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="scene-landscape" id="scene-img-lord" src="scene-lord.png" alt="The Lord" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="scene-landscape-ph">🖼</div>
                 <div class="scene-overlay">VIEW RECORD</div>
               </div>
@@ -227,7 +227,7 @@
 
             <div class="scene-row" onclick="openScene('threaders')">
               <div class="scene-landscape-wrap">
-                <img class="scene-landscape" id="scene-img-threaders" src="4.jpg" alt="The Threaders" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="scene-landscape" id="scene-img-threaders" src="scene-threaders.png" alt="The Threaders" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="scene-landscape-ph">🖼</div>
                 <div class="scene-overlay">VIEW RECORD</div>
               </div>
@@ -251,7 +251,7 @@
           </div>
           <div class="scene-detail">
             <div class="scene-detail-landscape-wrap">
-              <img class="scene-detail-landscape" id="scene-detail-img-lord" src="4.jpg" alt="The Lord" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="scene-detail-landscape" id="scene-detail-img-lord" src="scene-lord.png" alt="The Lord" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="scene-detail-landscape-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -270,7 +270,7 @@
           </div>
           <div class="scene-detail">
             <div class="scene-detail-landscape-wrap">
-              <img class="scene-detail-landscape" id="scene-detail-img-threaders" src="4.jpg" alt="The Threaders" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="scene-detail-landscape" id="scene-detail-img-threaders" src="scene-threaders.png" alt="The Threaders" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="scene-detail-landscape-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -290,7 +290,7 @@
           <div class="dim-gallery">
             <div class="dim-card" onclick="openPersonnel('heaves')">
               <div class="dim-portrait-wrap">
-                <img class="dim-portrait" id="per-img-heaves" src="4.jpg" alt="Dr. Heaves" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="dim-portrait" id="per-img-heaves" src="personnel-1.png" alt="Dr. Heaves" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="dim-portrait-ph">🖼</div>
                 <div class="dim-card-overlay">VIEW RECORD</div>
               </div>
@@ -298,7 +298,7 @@
             </div>
             <div class="dim-card" onclick="openPersonnel('rasputin')">
               <div class="dim-portrait-wrap">
-                <img class="dim-portrait" id="per-img-rasputin" src="4.jpg" alt="Rasputin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="dim-portrait" id="per-img-rasputin" src="personnel-2.png" alt="Rasputin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="dim-portrait-ph">🖼</div>
                 <div class="dim-card-overlay">VIEW RECORD</div>
               </div>
@@ -306,7 +306,7 @@
             </div>
             <div class="dim-card" onclick="openPersonnel('booker')">
               <div class="dim-portrait-wrap">
-                <img class="dim-portrait" id="per-img-booker" src="4.jpg" alt="Dr. Booker" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="dim-portrait" id="per-img-booker" src="personnel-3.png" alt="Dr. Booker" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="dim-portrait-ph">🖼</div>
                 <div class="dim-card-overlay">VIEW RECORD</div>
               </div>
@@ -325,7 +325,7 @@
           </div>
           <div class="dim-detail">
             <div class="dim-detail-portrait-wrap">
-              <img class="dim-detail-portrait" id="per-detail-img-heaves" src="4.jpg" alt="Dr. Heaves" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="dim-detail-portrait" id="per-detail-img-heaves" src="personnel-1.png" alt="Dr. Heaves" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="dim-detail-portrait-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -344,7 +344,7 @@
           </div>
           <div class="dim-detail">
             <div class="dim-detail-portrait-wrap">
-              <img class="dim-detail-portrait" id="per-detail-img-rasputin" src="4.jpg" alt="Rasputin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="dim-detail-portrait" id="per-detail-img-rasputin" src="personnel-2.png" alt="Rasputin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="dim-detail-portrait-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -363,7 +363,7 @@
           </div>
           <div class="dim-detail">
             <div class="dim-detail-portrait-wrap">
-              <img class="dim-detail-portrait" id="per-detail-img-booker" src="4.jpg" alt="Dr. Booker" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="dim-detail-portrait" id="per-detail-img-booker" src="personnel-3.png" alt="Dr. Booker" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="dim-detail-portrait-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -454,7 +454,7 @@
           <div class="assign-section" style="margin-top:16px;">
             <div class="assign-section-title">Simulation <span class="assign-count">(1)</span> :</div>
             <div class="assign-section-body">
-              <div class="assign-item">(1) Simulation Test 1</div>
+              <div class="assign-item" onclick="startSimulation()" style="cursor:pointer;text-decoration:underline;color:#8b1a1a;">(1) Simulation Test 1</div>
             </div>
           </div>
 
@@ -467,7 +467,7 @@
           <!-- Collapsed chat preview row -->
           <div class="chat-preview-row" id="chat-preview-kroive" onclick="openChat('kroive')">
             <div class="chat-preview-pfp">
-              <img id="chat-pfp-kroive" src="4.jpg" alt="A.Kroive.D" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img id="chat-pfp-kroive" src="kroive-pfp.png" alt="A.Kroive.D" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="chat-pfp-ph">🖼</div>
             </div>
             <div class="chat-preview-info">
@@ -488,7 +488,7 @@
             <div class="chat-thread-body">
               <div class="chat-msg-row">
                 <div class="chat-msg-pfp">
-                  <img src="4.jpg" alt="A.Kroive.D" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                  <img src="kroive-pfp.png" alt="A.Kroive.D" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                   <div class="chat-pfp-ph" style="width:100%;height:100%;">🖼</div>
                 </div>
                 <div class="chat-msg-bubble">
@@ -517,7 +517,7 @@
           <!-- Director row -->
           <div class="about-director-row">
             <div class="about-pfp-wrap">
-              <img id="about-pfp-img" src="2.jpg" alt="Director" style="display:none; width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none';document.getElementById('about-pfp-ph').style.display='flex';"/>
+              <img id="about-pfp-img" src="director-pfp.png" alt="Director" style="display:none; width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none';document.getElementById('about-pfp-ph').style.display='flex';"/>
               <div id="about-pfp-ph" class="about-pfp-ph">🖼</div>
             </div>
             <div class="about-director-name-box">
@@ -573,11 +573,17 @@
       <div class="page-panel" id="page-psych"><div class="content-card"><div class="card-title">Psychological Evaluation</div><div style="font-size:12px;color:#c4a882;">Evaluation records will appear here.</div></div></div>
       <div class="page-panel" id="page-field"><div class="content-card"><div class="card-title">Field Work</div><div style="font-size:12px;color:#c4a882;">Field work logs will appear here.</div></div></div>
       <div class="page-panel" id="page-team"><div class="content-card"><div class="card-title">Team Building</div><div style="font-size:12px;color:#c4a882;">Team building records will appear here.</div></div></div>
+
+      <!-- SIMULATION TEST 1 -->
+      <div class="page-panel" id="page-sim1">
+        <div id="sim-shell" style="background:#000;height:calc(100vh - 54px);width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 20px;box-sizing:border-box;overflow:hidden;"></div>
+      </div>
+
     </main>
 
     <div class="ads-panel">
       <div class="ad-slot">
-        <img id="ad-img" src="1.jpg" alt="Ad" onerror="this.style.display='none';document.getElementById('ad-ph').style.display='flex';" style="display:none;"/>
+        <img id="ad-img" src="ad-banner.png" alt="Ad" onerror="this.style.display='none';document.getElementById('ad-ph').style.display='flex';" style="display:none;"/>
         <div id="ad-ph" class="ad-placeholder">
           <div class="ad-icon">🖼</div>
           <div class="ad-label">Advertisement</div>
@@ -589,6 +595,23 @@
   </div>
 </div>
 
+<div id="sim-scanline"></div>
+
+<!-- CRASH SCREEN -->
+<div id="sim-crash-screen" style="position:fixed;inset:0;background:#f3f3f3;z-index:99999;display:none;flex-direction:column;align-items:center;justify-content:center;font-family:Arial,sans-serif;gap:12px;">
+  <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:4px;">
+    <rect x="8" y="4" width="32" height="40" rx="2" stroke="#555" stroke-width="2.5" fill="none"/>
+    <line x1="15" y1="20" x2="33" y2="20" stroke="#555" stroke-width="2.5"/>
+    <line x1="15" y1="27" x2="28" y2="27" stroke="#555" stroke-width="2.5"/>
+    <circle cx="38" cy="38" r="10" fill="#f3f3f3" stroke="#555" stroke-width="2.5"/>
+    <line x1="34" y1="34" x2="42" y2="42" stroke="#555" stroke-width="2.5"/>
+    <line x1="42" y1="34" x2="34" y2="42" stroke="#555" stroke-width="2.5"/>
+  </svg>
+  <h1 style="font-size:26px;font-weight:400;color:#202020;margin:0;">This page isn&#39;t working</h1>
+  <p style="font-size:14px;color:#555;margin:0;"><strong>DSS AGENT PORTAL</strong> is currently unable to handle this request.</p>
+  <p style="font-size:12px;font-weight:700;color:#555;margin:0;letter-spacing:0.5px;">HTTP ERROR 500</p>
+  <button onclick="window.location.href='REPLACE_WITH_YOUR_URL'" style="margin-top:16px;background:#1a73e8;color:#fff;border:none;border-radius:4px;padding:10px 28px;font-size:14px;font-family:Arial,sans-serif;cursor:pointer;">Reload</button>
+</div>
 
 </body>
 </html>
