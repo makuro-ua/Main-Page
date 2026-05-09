@@ -11,7 +11,7 @@
   <nav class="topnav">
     <div class="logo-box" onclick="goHome()">
       <span id="logo-text">LOGO.PNG</span>
-      <img id="logo-img" src="logo.png" alt="Logo" style="display:none;"/>
+      <img id="logo-img" src="images/ui/logo.png" alt="Logo" style="display:none;"/>
     </div>
     <div class="nav-item" id="nav-profile"     onclick="showPage('profile',this)">Agent Profile</div>
     <div class="nav-item active" id="nav-catalogue"  onclick="showPage('catalogue',this)">Catalogue</div>
@@ -23,7 +23,7 @@
   <div class="body-area">
     <aside class="sidebar">
       <div style="display:flex;align-items:center;gap:10px;">
-        <div class="avatar" style="overflow:hidden;"><img src="user-pfp.png" alt="User" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';"/></div>
+        <div class="avatar" style="overflow:hidden;"><img src="images/ui/user-pfp.png" alt="User" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';"/></div>
         <div>
           <div class="user-name">Username</div>
           <div class="user-sub">Agent Numer</div>
@@ -41,9 +41,28 @@
           <span class="arrow" id="arrow-simulations">›</span>
         </div>
         <div class="dropdown-body" id="db-simulations">
-          <div class="dropdown-sub" id="sl-psych" onclick="showPage('psych',this,'sub')"><div class="red-sq"></div> Psychological Evaluation</div>
-          <div class="dropdown-sub" id="sl-field" onclick="showPage('field',this,'sub')"><div class="red-sq"></div> Field Work</div>
-          <div class="dropdown-sub" id="sl-team"  onclick="showPage('team',this,'sub')"><div class="red-sq"></div> Team Building</div>
+          <div class="dropdown-sub" id="sl-psych" onclick="showPage('psych',this,'sub')">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="width:12px;height:12px;border:1.5px solid #8b1a1a;flex-shrink:0;display:inline-block;"></span>
+              Psychological Evaluation
+            </div>
+          </div>
+          <div class="dropdown-sub" id="sl-field" onclick="showPage('field',this,'sub')">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="width:12px;height:12px;border:1.5px solid #8b1a1a;background:#8b1a1a;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;">
+                <span style="color:#f5ede0;font-size:9px;line-height:1;">✓</span>
+              </span>
+              <span style="opacity:0.6;text-decoration:line-through;">Field Work</span>
+            </div>
+          </div>
+          <div class="dropdown-sub" id="sl-team" onclick="showPage('team',this,'sub')">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="width:12px;height:12px;border:1.5px solid #8b1a1a;background:#8b1a1a;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;">
+                <span style="color:#f5ede0;font-size:9px;line-height:1;">✓</span>
+              </span>
+              <span style="opacity:0.6;text-decoration:line-through;">Team Building</span>
+            </div>
+          </div>
         </div>
       </div>
     </aside>
@@ -53,32 +72,46 @@
       <!-- HOMEPAGE -->
       <div class="page-panel active" id="page-home">
         <div class="home-banner-slot">
-          <img id="banner-img" src="homepage-banner.png" alt="Banner" style="display:none;" onerror="this.style.display='none';document.getElementById('banner-ph').style.display='flex';"/>
+          <img id="banner-img" src="images/ui/homepage-banner.png" alt="Banner" style="display:none;" onerror="this.style.display='none';document.getElementById('banner-ph').style.display='flex';"/>
           <div id="banner-ph" class="home-banner-placeholder">
             🖼 Homepage Banner
             <span>1400 × 500 px</span>
           </div>
         </div>
         <div class="home-section">
-          <div class="home-section-divider">FAQS</div>
-          <div class="home-section-body">
-            Q: How do I update my agent profile?<br>
-            A: Navigate to Agent Profile in the top nav and edit your details directly.<br><br>
-            Q: Where can I find my assignments?<br>
-            A: Pending assignments are visible in the sidebar at all times.<br><br>
-            Q: Who do I contact for support?<br>
-            A: Use the Chat Log tab for direct agent support.
+          <div class="home-section-divider">FREQUENTLY ASKED QUESTIONS</div>
+          <div class="home-section-body" style="line-height:2;">
+            <strong>What is DSS?</strong><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dimension Sorting Society is a closed organization responsible for sorting and cataloguing anomalous people, objects, and events across alternate Dimensions. This organization is also responsible for keeping aforementioned anomalies in check or in dire situations, removed.<br><br>
+            <strong>Alternate Dimensions are real?</strong><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes, Alternate Dimensions are real.<br><br>
+            <strong>Is this site an elaborate practical joke?</strong><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No, this site is not a practical joke. This is Dimension Sorting Society's one sole website intended for agents to use.<br><br>
+            <strong>Am I going insane?</strong><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No one is going insane. A website cannot render anyone insane. If you feel like you are, you probably have accessed the wrong DSS website. However, if you are sure that you accessed the right website and <strong><em>YOU ARE</em></strong> actively going insane, book an immediate consultation with Dr. Magnus Booker. (<em>Yes, the pun was intended.</em>)
           </div>
         </div>
         <div class="home-section">
           <div class="home-section-divider">LATEST MEMOS</div>
-          <div class="home-section-body">
-            <strong>Apr 28, 2026 — Field Evaluations Deadline</strong><br>
-            All agents must complete field evaluations by end of Q2.<br><br>
-            <strong>Apr 20, 2026 — New Evaluation Format</strong><br>
-            The psychological evaluation format has been updated. Review before your next session.<br><br>
-            <strong>Apr 10, 2026 — Team Building Sessions</strong><br>
-            Scheduled for May. Check with your team lead for your time slot.
+          <div class="home-section-body" style="line-height:2;">
+            <strong>DSS ONSITE MEMO - 01</strong><br>
+            <em>From DSS DIRECTOR — BENJAMIN DOMINIC VOIROSE III</em><br>
+            <em>To New Agents,</em><br><br>
+            This website is intended for you to use to view your current DSS records. This website is still under maintenance however it is functional enough for anyone to use.<br><br>
+            With that mentioned, DO NOT MESS around the CHAT LOGS. I cannot see what you are sending each other, BUT DO NOT MESS AROUND.<br><br>
+            In any event those chat logs accidentally leak and records appear in my table, everyone and everything involved will be dealt with.<br><br>
+            <em>— B. D. Voirose III</em><br><br>
+            <hr style="border:none;border-top:1px solid #c4a882;margin:12px 0;"><br>
+            <strong>DSS ONSITE MEMO - 02</strong><br>
+            <em>From DSS SECRETARY — AN HORUS</em><br><br>
+            Good Evening,<br><br>
+            Apparently, there is a website now! How amusing. I shall lend out your new task, agents.<br><br>
+            I would like to request a unit to come and investigate the following universes:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;— XXI<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;— Monoworld<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;— Visual Novelities<br><br>
+            Thank you for your cooperation, dear agents!<br><br>
+            <em>— A. Horus</em>
           </div>
         </div>
       </div>
@@ -120,7 +153,7 @@
           <div class="dim-gallery">
             <div class="dim-card" onclick="openDimension('the-world')">
               <div class="dim-portrait-wrap">
-                <img class="dim-portrait" id="dim-img-the-world" src="dim-record-1.png" alt="The World" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="dim-portrait" id="dim-img-the-world" src="images/dimensions/dim-record-1.png" alt="The World" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="dim-portrait-ph" id="dim-ph-the-world">🖼</div>
                 <div class="dim-card-overlay">VIEW RECORD</div>
               </div>
@@ -128,7 +161,7 @@
             </div>
             <div class="dim-card" onclick="openDimension('bluebells')">
               <div class="dim-portrait-wrap">
-                <img class="dim-portrait" id="dim-img-bluebells" src="dim-record-2.png" alt="Bluebell's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="dim-portrait" id="dim-img-bluebells" src="images/dimensions/dim-record-2.png" alt="Bluebell's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="dim-portrait-ph" id="dim-ph-bluebells">🖼</div>
                 <div class="dim-card-overlay">VIEW RECORD</div>
               </div>
@@ -136,7 +169,7 @@
             </div>
             <div class="dim-card" onclick="openDimension('unrds')">
               <div class="dim-portrait-wrap">
-                <img class="dim-portrait" id="dim-img-unrds" src="dim-record-3.png" alt="Unrd's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="dim-portrait" id="dim-img-unrds" src="images/dimensions/dim-record-3.png" alt="Unrd's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="dim-portrait-ph" id="dim-ph-unrds">🖼</div>
                 <div class="dim-card-overlay">VIEW RECORD</div>
               </div>
@@ -155,7 +188,7 @@
           </div>
           <div class="dim-detail">
             <div class="dim-detail-portrait-wrap">
-              <img class="dim-detail-portrait" id="dim-detail-img-the-world" src="dim-record-1.png" alt="The World" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="dim-detail-portrait" id="dim-detail-img-the-world" src="images/dimensions/dim-record-1.png" alt="The World" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="dim-detail-portrait-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -174,7 +207,7 @@
           </div>
           <div class="dim-detail">
             <div class="dim-detail-portrait-wrap">
-              <img class="dim-detail-portrait" id="dim-detail-img-bluebells" src="dim-record-2.png" alt="Bluebell's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="dim-detail-portrait" id="dim-detail-img-bluebells" src="images/dimensions/dim-record-2.png" alt="Bluebell's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="dim-detail-portrait-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -193,7 +226,7 @@
           </div>
           <div class="dim-detail">
             <div class="dim-detail-portrait-wrap">
-              <img class="dim-detail-portrait" id="dim-detail-img-unrds" src="dim-record-3.png" alt="Unrd's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="dim-detail-portrait" id="dim-detail-img-unrds" src="images/dimensions/dim-record-3.png" alt="Unrd's" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="dim-detail-portrait-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -214,7 +247,7 @@
 
             <div class="scene-row" onclick="openScene('lord')">
               <div class="scene-landscape-wrap">
-                <img class="scene-landscape" id="scene-img-lord" src="scene-lord.png" alt="The Lord" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="scene-landscape" id="scene-img-lord" src="images/scenes/scene-lord.png" alt="The Lord" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="scene-landscape-ph">🖼</div>
                 <div class="scene-overlay">VIEW RECORD</div>
               </div>
@@ -227,7 +260,7 @@
 
             <div class="scene-row" onclick="openScene('threaders')">
               <div class="scene-landscape-wrap">
-                <img class="scene-landscape" id="scene-img-threaders" src="scene-threaders.png" alt="The Threaders" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="scene-landscape" id="scene-img-threaders" src="images/scenes/scene-threaders.png" alt="The Threaders" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="scene-landscape-ph">🖼</div>
                 <div class="scene-overlay">VIEW RECORD</div>
               </div>
@@ -251,7 +284,7 @@
           </div>
           <div class="scene-detail">
             <div class="scene-detail-landscape-wrap">
-              <img class="scene-detail-landscape" id="scene-detail-img-lord" src="scene-lord.png" alt="The Lord" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="scene-detail-landscape" id="scene-detail-img-lord" src="images/scenes/scene-lord.png" alt="The Lord" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="scene-detail-landscape-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -270,7 +303,7 @@
           </div>
           <div class="scene-detail">
             <div class="scene-detail-landscape-wrap">
-              <img class="scene-detail-landscape" id="scene-detail-img-threaders" src="scene-threaders.png" alt="The Threaders" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="scene-detail-landscape" id="scene-detail-img-threaders" src="images/scenes/scene-threaders.png" alt="The Threaders" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="scene-detail-landscape-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -290,7 +323,7 @@
           <div class="dim-gallery">
             <div class="dim-card" onclick="openPersonnel('heaves')">
               <div class="dim-portrait-wrap">
-                <img class="dim-portrait" id="per-img-heaves" src="personnel-1.png" alt="Dr. Heaves" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="dim-portrait" id="per-img-heaves" src="images/personnel/personnel-1.png" alt="Dr. Heaves" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="dim-portrait-ph">🖼</div>
                 <div class="dim-card-overlay">VIEW RECORD</div>
               </div>
@@ -298,7 +331,7 @@
             </div>
             <div class="dim-card" onclick="openPersonnel('rasputin')">
               <div class="dim-portrait-wrap">
-                <img class="dim-portrait" id="per-img-rasputin" src="personnel-2.png" alt="Rasputin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="dim-portrait" id="per-img-rasputin" src="images/personnel/personnel-2.png" alt="Rasputin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="dim-portrait-ph">🖼</div>
                 <div class="dim-card-overlay">VIEW RECORD</div>
               </div>
@@ -306,7 +339,7 @@
             </div>
             <div class="dim-card" onclick="openPersonnel('booker')">
               <div class="dim-portrait-wrap">
-                <img class="dim-portrait" id="per-img-booker" src="personnel-3.png" alt="Dr. Booker" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                <img class="dim-portrait" id="per-img-booker" src="images/personnel/personnel-3.png" alt="Dr. Booker" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                 <div class="dim-portrait-ph">🖼</div>
                 <div class="dim-card-overlay">VIEW RECORD</div>
               </div>
@@ -325,7 +358,7 @@
           </div>
           <div class="dim-detail">
             <div class="dim-detail-portrait-wrap">
-              <img class="dim-detail-portrait" id="per-detail-img-heaves" src="personnel-1.png" alt="Dr. Heaves" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="dim-detail-portrait" id="per-detail-img-heaves" src="images/personnel/personnel-1.png" alt="Dr. Heaves" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="dim-detail-portrait-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -344,7 +377,7 @@
           </div>
           <div class="dim-detail">
             <div class="dim-detail-portrait-wrap">
-              <img class="dim-detail-portrait" id="per-detail-img-rasputin" src="personnel-2.png" alt="Rasputin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="dim-detail-portrait" id="per-detail-img-rasputin" src="images/personnel/personnel-2.png" alt="Rasputin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="dim-detail-portrait-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -363,7 +396,7 @@
           </div>
           <div class="dim-detail">
             <div class="dim-detail-portrait-wrap">
-              <img class="dim-detail-portrait" id="per-detail-img-booker" src="personnel-3.png" alt="Dr. Booker" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img class="dim-detail-portrait" id="per-detail-img-booker" src="images/personnel/personnel-3.png" alt="Dr. Booker" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="dim-detail-portrait-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
@@ -394,11 +427,11 @@
 
           <div class="profile-box">
             <div class="profile-box-label">GENERAL INFORMATION</div>
-            <div class="profile-row"><span class="profile-label">Name</span><span class="profile-value">Username</span></div>
-            <div class="profile-row"><span class="profile-label">Agent No.</span><span class="profile-value">Agent Numer</span></div>
-            <div class="profile-row"><span class="profile-label">Status</span><span class="profile-value" style="color:#7a3b1e;">Active</span></div>
-            <div class="profile-row"><span class="profile-label">Assignment</span><span class="profile-value" style="color:#8b1a1a;">Pending</span></div>
-            <div class="profile-row"><span class="profile-label">Clearance</span><span class="profile-value">Level 1</span></div>
+            <div class="profile-row"><span class="profile-label">Name</span><span class="profile-value">—</span></div>
+            <div class="profile-row"><span class="profile-label">Agent No.</span><span class="profile-value">—</span></div>
+            <div class="profile-row"><span class="profile-label">Status</span><span class="profile-value" style="color:#7a3b1e;">—</span></div>
+            <div class="profile-row"><span class="profile-label">Assignment</span><span class="profile-value" style="color:#8b1a1a;">—</span></div>
+            <div class="profile-row"><span class="profile-label">Clearance</span><span class="profile-value">—</span></div>
             <div class="profile-row"><span class="profile-label">Division</span><span class="profile-value">—</span></div>
           </div>
 
@@ -420,9 +453,9 @@
             <div class="profile-row"><span class="profile-label">Handler</span><span class="profile-value">—</span></div>
             <div class="profile-row"><span class="profile-label">Field Rating</span><span class="profile-value">—</span></div>
             <div class="profile-row"><span class="profile-label">Psych Score</span><span class="profile-value">—</span></div>
-            <div class="profile-row"><span class="profile-label">Sim. Completed</span><span class="profile-value">0</span></div>
-            <div class="profile-row"><span class="profile-label">Missions</span><span class="profile-value">0</span></div>
-            <div class="profile-row"><span class="profile-label">Infractions</span><span class="profile-value">0</span></div>
+            <div class="profile-row"><span class="profile-label">Sim. Completed</span><span class="profile-value">—</span></div>
+            <div class="profile-row"><span class="profile-label">Missions</span><span class="profile-value">—</span></div>
+            <div class="profile-row"><span class="profile-label">Infractions</span><span class="profile-value">—</span></div>
           </div>
 
           <div class="profile-box" style="margin-top:14px;">
@@ -433,7 +466,20 @@
             <div class="profile-row"><span class="profile-label">Education</span><span class="profile-value">—</span></div>
             <div class="profile-row"><span class="profile-label">Prior Employ.</span><span class="profile-value">—</span></div>
             <div class="profile-row"><span class="profile-label">Emergency Ctct</span><span class="profile-value">—</span></div>
-            <div class="profile-row"><span class="profile-label">Notes</span><span class="profile-value" style="color:#c4a882;">No additional notes on file.</span></div>
+            <div class="profile-row"><span class="profile-label">Notes</span><span class="profile-value" style="color:#c4a882;">—</span></div>
+          </div>
+
+          <div class="profile-box" style="margin-top:14px;">
+            <div class="profile-box-label">DESCRIPTION</div>
+            <div style="font-size:12px;color:#a08060;line-height:1.8;padding:8px 0;">Here are your personal data that are currently within our system.<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet.</div>
+          </div>
+
+          <div class="profile-box" style="margin-top:14px;">
+            <div class="profile-box-label">ACCESS NOTES</div>
+            <div style="font-size:12px;color:#a08060;line-height:2;padding:8px 0;">
+              ● You can only access DSS CASE FILES by formally requesting a form from DSS Archives Director, Agent Magoá.<br>
+              ● In order to increase your Clearance Level, you are required to file forms to <strong>[ ■■■■■■ ]</strong> and your specific requirements will be given upon request.
+            </div>
           </div>
 
         </div>
@@ -467,7 +513,7 @@
           <!-- Collapsed chat preview row -->
           <div class="chat-preview-row" id="chat-preview-kroive" onclick="openChat('kroive')">
             <div class="chat-preview-pfp">
-              <img id="chat-pfp-kroive" src="kroive-pfp.png" alt="A.Kroive.D" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+              <img id="chat-pfp-kroive" src="images/chat/kroive-pfp.png" alt="A.Kroive.D" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
               <div class="chat-pfp-ph">🖼</div>
             </div>
             <div class="chat-preview-info">
@@ -488,7 +534,7 @@
             <div class="chat-thread-body">
               <div class="chat-msg-row">
                 <div class="chat-msg-pfp">
-                  <img src="kroive-pfp.png" alt="A.Kroive.D" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
+                  <img src="images/chat/kroive-pfp.png" alt="A.Kroive.D" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;"/>
                   <div class="chat-pfp-ph" style="width:100%;height:100%;">🖼</div>
                 </div>
                 <div class="chat-msg-bubble">
@@ -510,14 +556,14 @@
 
           <!-- DSS Description box -->
           <div class="about-desc-box">
-            <div class="about-desc-headline">DSS (Dimension Sorting Society) is a</div>
-            <div class="about-desc-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+            <div class="about-desc-headline">DSS ( <em>Dimension Sorting Society</em> ) IS A</div>
+            <div class="about-desc-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam libero elit, consequat vitae neque id, gravida porta sem. Sed finibus orci et libero viverra dignissim. Curabitur sodales metus non turpis imperdiet, non semper elit lobortis. Quisque in consequat mauris, et porttitor odio. Curabitur vel semper lacus. Vivamus bibendum mattis tortor non volutpat. Integer eget eros a mi maximus vulputate non consequat ex. Curabitur imperdiet in quam ut vulputate. Etiam et diam vitae nulla fringilla imperdiet. Curabitur in neque id tellus bibendum viverra sed at nunc. In consectetur gravida tincidunt.</div>
           </div>
 
           <!-- Director row -->
           <div class="about-director-row">
             <div class="about-pfp-wrap">
-              <img id="about-pfp-img" src="director-pfp.png" alt="Director" style="display:none; width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none';document.getElementById('about-pfp-ph').style.display='flex';"/>
+              <img id="about-pfp-img" src="images/about/director-pfp.png" alt="Director" style="display:none; width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none';document.getElementById('about-pfp-ph').style.display='flex';"/>
               <div id="about-pfp-ph" class="about-pfp-ph">🖼</div>
             </div>
             <div class="about-director-name-box">
@@ -530,11 +576,11 @@
           <div class="about-vm-row">
             <div class="about-vm-box">
               <div class="about-vm-label">VISION</div>
-              <div class="about-vm-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+              <div class="about-vm-body">The Dimension Sorting Society strives to provide peace across dimensions, as an organization with a working force, DSS wants to put value and give purpose to those who are in need of one, forming a society of the better and good.</div>
             </div>
             <div class="about-vm-box">
               <div class="about-vm-label">MISSION</div>
-              <div class="about-vm-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</div>
+              <div class="about-vm-body">The Dimension Sorting Society provides opportunities for growth and development among its agents and personnel, giving them the chance to constantly challenge themselves by letting them face situations where their decision making is very much valued.</div>
             </div>
           </div>
 
@@ -583,7 +629,7 @@
 
     <div class="ads-panel">
       <div class="ad-slot">
-        <img id="ad-img" src="ad-banner.png" alt="Ad" onerror="this.style.display='none';document.getElementById('ad-ph').style.display='flex';" style="display:none;"/>
+        <img id="ad-img" src="images/ui/ad-banner.png" alt="Ad" onerror="this.style.display='none';document.getElementById('ad-ph').style.display='flex';" style="display:none;"/>
         <div id="ad-ph" class="ad-placeholder">
           <div class="ad-icon">🖼</div>
           <div class="ad-label">Advertisement</div>

@@ -43,13 +43,31 @@ function closeChat(id) {
   document.getElementById('chat-preview-' + id).style.display = 'flex';
 }
 
-// ── Anomalous Scene data ────────────────────────────────────────────────────
+// ── Anomalous Scenes Data ────────────────────────────────────────────────────
 const SCENE_DATA = {
   'lord': {
-    text: `DESIGNATION: The Lord(?)\nCLASSIFICATION: Anomalous Entity\nSCENE TYPE: Monoworld\nTHREAT INDEX: Unconfirmed\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nVestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Curabitur blandit tempus porttitor.`
+    text: `DESIGNATION: The Lord(?)
+CLASSIFICATION: Anomalous Entity
+SCENE TYPE: Monochrome World
+THREAT INDEX: Unconfirmed
+
+This picture was taken by Agent [ ■■■■■■ ]'s field camera.
+
+According to agents that have explored the Monochrome World, this is a world that is strictly colored in various shades of black and white. Within each report, agents have often been followed by 'Narrators' and spiders within each land and bridge.
+
+Narrators may either be hostile or friendly. Nonetheless, they have one thing in common — Serving The Lord.
+
+The Lord is an entity within this dimension, supposedly the one controlling everything within it. Nothing else is known of this dimension.`
   },
   'threaders': {
-    text: `DESIGNATION: The Threaders\nCLASSIFICATION: Anomalous Entity\nSCENE TYPE: Mobile / Migratory\nTHREAT INDEX: High\n\nPellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.\n\nDonec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n\nAenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.`
+    text: `DESIGNATION: The Threaders
+CLASSIFICATION: Anomalous Entity
+SCENE TYPE: Mobile / Migratory
+THREAT INDEX: High
+
+This picture was recovered from Agent [ ■■■■■■ ]'s field camera. Agent [ ■■■■■■ ]'s yet to be found.
+
+"The Threaders" or in other records "The Lovers", in this image form a vague silhouette of a pair of what are supposed to be humans conjoined by threads. This is believed to be the work of Yŭxuān [No. 222], an entity from a Level 4 dimension.`
   }
 };
 
@@ -113,13 +131,27 @@ function retryCases() {
 // ── Personnel placeholder descriptions ─────────────────────────────────────
 const PER_DATA = {
   'heaves': {
-    text: `NAME: Dr. Heaves\nROLE: Senior Research Officer\nCLEARANCE: Level 4\nSTATUS: Active\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nCurabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis molestie dictum semper, ex quam interdum quam, vitae pulvinar ante ipsum vulputate ipsum.`
+    text: `NAME: Dr. Floreilev Heaves
+ROLE: Chief of DSS Medical Affairs
+STATUS: Active
+
+Dr. Heaves had been with DSS eversince ∆∆∆∆. Before the full establishment and acceptance of other medical personnel, Dr. Heaves single-handedly ran the medical affairs.
+
+He is now much focused on cataloguing forensic reports under the same field. Above all, his medical expertise is, nonetheless, praiseworthy.`
   },
   'rasputin': {
-    text: `NAME: Rasputin\nROLE: Field Operative\nCLEARANCE: Level 3\nSTATUS: Active\n\nPellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.\n\nDonec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae.\n\nAenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.`
+    text: `NAME: Rasputin C.
+ROLE: Mortuary Scientist — DSS
+STATUS: Active
+
+Rasputin C. is a mortician. That's all we all know about him. Nobody knows why he dresses like that. Maybe Dir. Voirose knows?`
   },
   'booker': {
-    text: `NAME: Dr. Booker\nROLE: Anomaly Specialist\nCLEARANCE: Level 5\nSTATUS: Active\n\nMaecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo.\n\nSed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.\n\nNullam varius, turpis molestie dictum semper, ex quam interdum quam, vitae pulvinar ante ipsum vulputate ipsum. Praesent commodo cursus magna, vel scelerisque nisl consectetur.`
+    text: `NAME: Dr. Magnus Booker
+ROLE: Chief of Psychological Affairs — DSS
+STATUS: Active
+
+Dr. Booker has been serving DSS since he was hired to be the psychology doctor of the Dimension Sorting Society. Aside being head over heels for Dr. Heaves, his work is still exceptional as he has been able to skim through many agents and entities alike.`
   }
 };
 
@@ -142,13 +174,39 @@ window.setPerImage = (id, src) => {
 // ── Dimension placeholder descriptions ─────────────────────────────────────
 const DIM_DATA = {
   'the-world': {
-    text: `DESIGNATION: The World\nCLASSIFICATION: Primary\nTHREAT INDEX: Moderate\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.\n\nNulla facilisi. Cras commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo.\n\nVestibulum id ligula porta felis euismod semper. Duis mollis est non commodo luctus. Aenean lacinia bibendum nulla sed consectetur.`
+    text: `DIMENSION NAME: The World
+CLASSIFICATION: Level 4
+ENTITIES KNOWN: Maria, Bluebell Hyancith
+
+Barely any information would be known in regards to this dimension. Its reason would be because of the fact that agents would barely find themselves going home because of this dimension. The only remaining information from this dimension would be its anomalies. Particularly Maria Willows and Bluebell Hyancith.
+
+According to two agent's reports, there is apparently land below another land. A better term to describe the land below would be a 'basement'.
+
+It presents itself as a land with a sky over it, when in actuality, it is just the flooring of the land above it. Within the basement lies a large forestry with a lake in the very center. In the basement, also lies Bluebell Hyancith. According to an older report by an agent, the creature there is a man-eating demon.
+
+When entering this dimension, the agent would often be sent to the basement. However, according to another agent, they had been teleported to the land above it once, or twice — and would frequently visit the entity by the name of 'Maria Willows'. Apparently, she would put the agents in the basement for either being greedy, or ill-mannered.
+
+Nothing else is known in this dimension.`
   },
   'bluebells': {
-    text: `DESIGNATION: Bluebell's\nCLASSIFICATION: Secondary\nTHREAT INDEX: Low\n\nPellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.\n\nDonec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n\nVestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci.`
+    text: `DIMENSION NAME: "Love Dubs" — A Visual Novel
+CLASSIFICATION: Level 2
+ENTITIES KNOWN: Sr_u! (Rogue)
+
+"Love Dubs" — A Visual Novel is a very harmless dimension. It does not pose any threats to any agents and has a peculiar POINT ZERO which actually prompts anyone to give their name to be able to access the dimension entirely.
+
+This dimension works within the logic of a Visual Novel of a romantic genre wherein the player, or on this case, the visiting agent can only leave upon finishing a route which involves romancing one of the "romanceable" characters:
+● Milas
+● Augustine
+● Ethaniel
+● Marcel
+
+The names mentioned above are not catalogued as anomalies by DSS as they are observed to properly follow their story routes naturally. All of the names above are the names of supposedly "Voice Actor" characters whose routes vary depending on which was chosen.
+
+As for now only one rogue character from this dimension was put under surveillance, a non-playable (romanceable) character named Sr_u! which was used by a Senior Agent as a backdoor exit and has since displayed anomalous abilities.`
   },
   'unrds': {
-    text: `DESIGNATION: Unrd's\nCLASSIFICATION: Tertiary\nTHREAT INDEX: Unknown\n\nMaecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.\n\nDuis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc. Curabitur pretium tincidunt lacus.\n\nNulla gravida orci a odio. Nullam varius, turpis molestie dictum semper, ex quam interdum quam, vitae pulvinar ante ipsum vulputate ipsum.`
+    text: `DESIGNATION: Unrd's\nCLASSIFICATION: Tertiary\nTHREAT INDEX: Unknown\n\nMaecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.\n\nNullam varius, turpis molestie dictum semper, ex quam interdum quam, vitae pulvinar ante ipsum vulputate ipsum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper.\n\nPellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`
   }
 };
 
@@ -284,9 +342,9 @@ window.setDimImage = (id, src) => {
 // ── SIMULATION TEST 1 ──────────────────────────────────────────────────────
 
 const SIM_ROUNDS = [
-  { left: { src: 'sim-round1-left.png',  isAnomaly: true  }, right: { src: 'sim-round1-right.png', isAnomaly: false } },
-  { left: { src: 'sim-round2-left.png',  isAnomaly: false }, right: { src: 'sim-round2-right.png', isAnomaly: true  } },
-  { left: { src: 'sim-round3-left.png',  isAnomaly: true  }, right: { src: 'sim-round3-right.png', isAnomaly: false } },
+  { left: { src: 'images/simulation/sim-round1-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/sim-round1-right.png', isAnomaly: false } },
+  { left: { src: 'images/simulation/sim-round2-left.png',  isAnomaly: false }, right: { src: 'images/simulation/sim-round2-right.png', isAnomaly: true  } },
+  { left: { src: 'images/simulation/sim-round3-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/sim-round3-right.png', isAnomaly: false } },
 ];
 
 let simScore = 0;
@@ -697,10 +755,10 @@ function simStopBgMusic() {
 
 // ── Ambient creepy image flashes (runs throughout simulation) ──────────────
 const SIM_ALL_IMGS = [
-  'sim-round1-left.png','sim-round1-right.png',
-  'sim-round2-left.png','sim-round2-right.png',
-  'sim-round3-left.png','sim-round3-right.png',
-  'sim-tutorial-anomaly.png','sim-tutorial-normal.png',
+  'images/simulation/sim-round1-left.png','images/simulation/sim-round1-right.png',
+  'images/simulation/sim-round2-left.png','images/simulation/sim-round2-right.png',
+  'images/simulation/sim-round3-left.png','images/simulation/sim-round3-right.png',
+  'images/simulation/sim-tutorial-anomaly.png','images/simulation/sim-tutorial-normal.png',
 ];
 
 function simStartAmbientFlashes(loop) {
@@ -946,10 +1004,11 @@ function simStartFlashLoop(loop) {
   if (simFlashInterval) { clearInterval(simFlashInterval); simFlashInterval = null; }
   if (loop < 3) return;
   const srcs = [
-    'sim-round1-left.png','sim-round1-right.png',
-    'sim-round2-left.png','sim-round2-right.png',
-    'sim-round3-left.png','sim-round3-right.png',
-    'sim-tutorial-anomaly.png',
+    'images/flashing/sim-flash-1.png',  'images/flashing/sim-flash-2.png',  'images/flashing/sim-flash-3.png',  'images/flashing/sim-flash-4.png',
+    'images/flashing/sim-flash-5.png',  'images/flashing/sim-flash-6.png',  'images/flashing/sim-flash-7.png',  'images/flashing/sim-flash-8.png',
+    'images/flashing/sim-flash-9.png',  'images/flashing/sim-flash-10.png', 'images/flashing/sim-flash-11.png', 'images/flashing/sim-flash-12.png',
+    'images/flashing/sim-flash-13.png', 'images/flashing/sim-flash-14.png', 'images/flashing/sim-flash-15.png', 'images/flashing/sim-flash-16.png',
+    'images/flashing/sim-flash-17.png', 'images/flashing/sim-flash-18.png', 'images/flashing/sim-flash-19.png', 'images/flashing/sim-flash-20.png',
   ];
   let fl = document.getElementById('sim-loop-flash');
   if (!fl) {
@@ -1218,10 +1277,11 @@ function simTriggerCrash() {
   for (let i = 0; i < highId; i++) { clearTimeout(i); clearInterval(i); }
 
   const flashSrcs = [
-    'sim-round1-left.png', 'sim-round1-right.png',
-    'sim-round2-left.png', 'sim-round2-right.png',
-    'sim-round3-left.png', 'sim-round3-right.png',
-    'sim-tutorial-anomaly.png', 'sim-tutorial-normal.png',
+    'images/flashing/sim-flash-1.png',  'images/flashing/sim-flash-2.png',  'images/flashing/sim-flash-3.png',  'images/flashing/sim-flash-4.png',
+    'images/flashing/sim-flash-5.png',  'images/flashing/sim-flash-6.png',  'images/flashing/sim-flash-7.png',  'images/flashing/sim-flash-8.png',
+    'images/flashing/sim-flash-9.png',  'images/flashing/sim-flash-10.png', 'images/flashing/sim-flash-11.png', 'images/flashing/sim-flash-12.png',
+    'images/flashing/sim-flash-13.png', 'images/flashing/sim-flash-14.png', 'images/flashing/sim-flash-15.png', 'images/flashing/sim-flash-16.png',
+    'images/flashing/sim-flash-17.png', 'images/flashing/sim-flash-18.png', 'images/flashing/sim-flash-19.png', 'images/flashing/sim-flash-20.png',
   ];
 
   const flashImg = document.createElement('div');
@@ -1437,8 +1497,8 @@ async function simRunTutorial() {
 
   const imgRow = document.createElement('div');
   imgRow.className = 'sim-images-row sim-fade';
-  imgRow.appendChild(makeFrameBox('SUBJECT A — ANOMALY', 'sim-tutorial-anomaly.png', 'ANOMALY<br>IMAGE'));
-  imgRow.appendChild(makeFrameBox('SUBJECT B — NORMAL',  'sim-tutorial-normal.png',  'NORMAL<br>IMAGE'));
+  imgRow.appendChild(makeFrameBox('SUBJECT A — ANOMALY', 'images/simulation/sim-tutorial-anomaly.png', 'ANOMALY<br>IMAGE'));
+  imgRow.appendChild(makeFrameBox('SUBJECT B — NORMAL',  'images/simulation/sim-tutorial-normal.png',  'NORMAL<br>IMAGE'));
   shell.appendChild(imgRow);
   await simWait(300);
 
