@@ -512,7 +512,7 @@
           <!-- Collapsed chat preview row -->
           <div class="chat-preview-row" id="chat-preview-kroive" onclick="openChat('kroive')">
             <div class="chat-preview-pfp">
-              <img id="chat-pfp-kroive" src="images/chat/kroive-pfp.png" alt="A.Kroive.D" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"/>
+              <img id="chat-pfp-kroive" src="images/chat/kroive-pfp.png" alt="A.Kroive.D" style="display:block;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"/>
               <div class="chat-pfp-ph">🖼</div>
             </div>
             <div class="chat-preview-info">
@@ -533,7 +533,7 @@
             <div class="chat-thread-body">
               <div class="chat-msg-row">
                 <div class="chat-msg-pfp">
-                  <img src="images/chat/kroive-pfp.png" alt="A.Kroive.D" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"/>
+                  <img src="images/chat/kroive-pfp.png" alt="A.Kroive.D" style="display:block;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"/>
                   <div class="chat-pfp-ph" style="width:100%;height:100%;">🖼</div>
                 </div>
                 <div class="chat-msg-bubble">
@@ -562,8 +562,8 @@
           <!-- Director row -->
           <div class="about-director-row">
             <div class="about-pfp-wrap">
-              <img id="about-pfp-img" src="images/about/director-pfp.png" alt="Director" style="width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none';document.getElementById('about-pfp-ph').style.display='flex';"/>
-              <div id="about-pfp-ph" class="about-pfp-ph">🖼</div>
+              <img id="about-pfp-img" src="images/about/director-pfp.png" alt="Director" style="display:block;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';document.getElementById('about-pfp-ph').style.display='flex';"/>
+              <div id="about-pfp-ph" class="about-pfp-ph" style="display:none;">🖼</div>
             </div>
             <div class="about-director-name-box">
               <div class="about-director-name">Director Benjamin Dominic Voirose III.</div>
@@ -657,6 +657,7 @@
   <p style="font-size:12px;font-weight:700;color:#555;margin:0;letter-spacing:0.5px;">HTTP ERROR 500</p>
   <button onclick="window.location.href='REPLACE_WITH_YOUR_URL'" style="margin-top:16px;background:#1a73e8;color:#fff;border:none;border-radius:4px;padding:10px 28px;font-size:14px;font-family:Arial,sans-serif;cursor:pointer;">Reload</button>
 </div>
+
 </body>
 </html>
 
