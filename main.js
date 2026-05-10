@@ -1648,9 +1648,8 @@ async function simRunRound() {
       if (side === 'left') answeredLeft = correct; else answeredRight = correct;
       if (answeredLeft !== null && answeredRight !== null) {
         simCurrentRound++;
-        // 15 second cooldown between rounds (shrinks on high loops)
-        const cutDelay = loop >= 3 ? Math.max(15000 - loop*1500, 4000) : 15000;
-        setTimeout(async () => { await simBlackCut(Math.max(500-loop*40,150)); simRunRound(); }, cutDelay);
+        // Proceed immediately once both answered — no cooldown
+        setTimeout(async () => { await simBlackCut(Math.max(500-loop*40,150)); simRunRound(); }, 800);
       }
     }
 
@@ -1674,21 +1673,23 @@ async function simRunRound() {
   simSpeak(instText, loop);
   await simType(instEl, instText, Math.max(55 - loop*3, 20), loop);
 
-  // Loop 3+: auto-click both buttons after random short delay, possibly wrong
+  // Loop 3+: auto-click both buttons after 5s, possibly wrong
   if (loop >= 3) {
     simAutoClickTimeout = setTimeout(() => {
       if (answeredLeft !== null && answeredRight !== null) return;
-      // glitch flash + noise
       simPlayError(0.07 * Math.min(loop,5));
       simScreenFlash('rgba(255,0,0,0.12)', 80);
-
-      // randomly click — sometimes correct, sometimes wrong, gets more wrong as loop increases
       const wrongChance = Math.min((loop-2)*0.2, 0.85);
       const leftGuess  = Math.random() < wrongChance ? !round.left.isAnomaly  : round.left.isAnomaly;
       const rightGuess = Math.random() < wrongChance ? !round.right.isAnomaly : round.right.isAnomaly;
-
       if (answeredLeft === null)  leftBox.choose(leftGuess);
       if (answeredRight === null) setTimeout(() => { if(answeredRight===null) rightBox.choose(rightGuess); }, 200);
+    }, 5000);
+  } else {
+    // Loops 0-2: auto-answer correctly after 5s if player hasn't answered
+    simAutoClickTimeout = setTimeout(() => {
+      if (answeredLeft === null)  leftBox.choose(round.left.isAnomaly);
+      if (answeredRight === null) setTimeout(() => { if(answeredRight===null) rightBox.choose(round.right.isAnomaly); }, 200);
     }, 5000);
   }
 }
@@ -1908,7 +1909,7 @@ async function simRunResults() {
     if (shell2) shell2.classList.add('sim-pulsing');
   }
 
-  await simWait(15000);  // 15 second cooldown before next loop
+  await simWait(5000);  // 5 second cooldown before next loop
 
   // Glitch burst before switching
   const burstCount = Math.min(loop+1, 10);
