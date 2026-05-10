@@ -340,8 +340,6 @@ window.setDimImage = (id, src) => {
 
 // ── SIMULATION TEST 1 ──────────────────────────────────────────────────────
 
-// Each loop has its own set of 3 rounds with different images
-// Adjust isAnomaly: true/false to match whichever image is the anomaly
 const SIM_ROUNDS_PER_LOOP = [
   // Loop 0
   [
