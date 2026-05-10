@@ -1,5 +1,3 @@
-
-// ── Generic loading loop (personals, evaluations, simulations) ───────────────
 const LOADING_MSGS = {
   personals:   ['Retrieving personal records...','Establishing secure connection...','Authenticating credentials...','Fetching archived data...','Decrypting file index...','Access denied — retrying...','Almost there...'],
   evaluations: ['Retrieving evaluation records...','Establishing secure connection...','Authenticating credentials...','Fetching performance data...','Decrypting score index...','Synchronising with server...','Almost there...'],
@@ -338,8 +336,13 @@ window.setDimImage = (id, src) => {
 }
 
 
+
+
+
 // ── SIMULATION TEST 1 ──────────────────────────────────────────────────────
 
+// Each loop has its own set of 3 rounds with different images
+// Adjust isAnomaly: true/false to match whichever image is the anomaly
 const SIM_ROUNDS_PER_LOOP = [
   // Loop 0
   [
@@ -792,25 +795,10 @@ function simStopBgMusic() {
 
 // ── Ambient creepy image flashes (runs throughout simulation) ──────────────
 const SIM_ALL_IMGS = [
-    'images/simulation/loop0-round1-left.png','images/simulation/loop0-round1-right.png',
-    'images/simulation/loop0-round2-left.png','images/simulation/loop0-round2-right.png',
-    'images/simulation/loop0-round3-left.png','images/simulation/loop0-round3-right.png',
-    'images/simulation/loop1-round1-left.png','images/simulation/loop1-round1-right.png',
-    'images/simulation/loop1-round2-left.png','images/simulation/loop1-round2-right.png',
-    'images/simulation/loop1-round3-left.png','images/simulation/loop1-round3-right.png',
-    'images/simulation/loop2-round1-left.png','images/simulation/loop2-round1-right.png',
-    'images/simulation/loop2-round2-left.png','images/simulation/loop2-round2-right.png',
-    'images/simulation/loop2-round3-left.png','images/simulation/loop2-round3-right.png',
-    'images/simulation/loop3-round1-left.png','images/simulation/loop3-round1-right.png',
-    'images/simulation/loop3-round2-left.png','images/simulation/loop3-round2-right.png',
-    'images/simulation/loop3-round3-left.png','images/simulation/loop3-round3-right.png',
-    'images/simulation/loop4-round1-left.png','images/simulation/loop4-round1-right.png',
-    'images/simulation/loop4-round2-left.png','images/simulation/loop4-round2-right.png',
-    'images/simulation/loop4-round3-left.png','images/simulation/loop4-round3-right.png',
-    'images/simulation/loop5-round1-left.png','images/simulation/loop5-round1-right.png',
-    'images/simulation/loop5-round2-left.png','images/simulation/loop5-round2-right.png',
-    'images/simulation/loop5-round3-left.png','images/simulation/loop5-round3-right.png',
-    'images/simulation/sim-tutorial-anomaly.png','images/simulation/sim-tutorial-normal.png',
+  'images/simulation/sim-round1-left.png','images/simulation/sim-round1-right.png',
+  'images/simulation/sim-round2-left.png','images/simulation/sim-round2-right.png',
+  'images/simulation/sim-round3-left.png','images/simulation/sim-round3-right.png',
+  'images/simulation/sim-tutorial-anomaly.png','images/simulation/sim-tutorial-normal.png',
 ];
 
 function simStartAmbientFlashes(loop) {
