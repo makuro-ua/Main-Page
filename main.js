@@ -1,3 +1,5 @@
+
+// ── Generic loading loop (personals, evaluations, simulations) ───────────────
 const LOADING_MSGS = {
   personals:   ['Retrieving personal records...','Establishing secure connection...','Authenticating credentials...','Fetching archived data...','Decrypting file index...','Access denied — retrying...','Almost there...'],
   evaluations: ['Retrieving evaluation records...','Establishing secure connection...','Authenticating credentials...','Fetching performance data...','Decrypting score index...','Synchronising with server...','Almost there...'],
@@ -341,11 +343,51 @@ window.setDimImage = (id, src) => {
 
 // ── SIMULATION TEST 1 ──────────────────────────────────────────────────────
 
-const SIM_ROUNDS = [
-  { left: { src: 'images/simulation/sim-round1-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/sim-round1-right.png', isAnomaly: false } },
-  { left: { src: 'images/simulation/sim-round2-left.png',  isAnomaly: false }, right: { src: 'images/simulation/sim-round2-right.png', isAnomaly: true  } },
-  { left: { src: 'images/simulation/sim-round3-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/sim-round3-right.png', isAnomaly: false } },
+// Each loop has its own set of 3 rounds with different images
+// Adjust isAnomaly: true/false to match whichever image is the anomaly
+const SIM_ROUNDS_PER_LOOP = [
+  // Loop 0
+  [
+    { left: { src: 'images/simulation/loop0-round1-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop0-round1-right.png', isAnomaly: false } },
+    { left: { src: 'images/simulation/loop0-round2-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop0-round2-right.png', isAnomaly: true  } },
+    { left: { src: 'images/simulation/loop0-round3-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop0-round3-right.png', isAnomaly: false } },
+  ],
+  // Loop 1
+  [
+    { left: { src: 'images/simulation/loop1-round1-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop1-round1-right.png', isAnomaly: true  } },
+    { left: { src: 'images/simulation/loop1-round2-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop1-round2-right.png', isAnomaly: false } },
+    { left: { src: 'images/simulation/loop1-round3-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop1-round3-right.png', isAnomaly: true  } },
+  ],
+  // Loop 2
+  [
+    { left: { src: 'images/simulation/loop2-round1-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop2-round1-right.png', isAnomaly: false } },
+    { left: { src: 'images/simulation/loop2-round2-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop2-round2-right.png', isAnomaly: true  } },
+    { left: { src: 'images/simulation/loop2-round3-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop2-round3-right.png', isAnomaly: false } },
+  ],
+  // Loop 3
+  [
+    { left: { src: 'images/simulation/loop3-round1-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop3-round1-right.png', isAnomaly: true  } },
+    { left: { src: 'images/simulation/loop3-round2-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop3-round2-right.png', isAnomaly: false } },
+    { left: { src: 'images/simulation/loop3-round3-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop3-round3-right.png', isAnomaly: true  } },
+  ],
+  // Loop 4
+  [
+    { left: { src: 'images/simulation/loop4-round1-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop4-round1-right.png', isAnomaly: false } },
+    { left: { src: 'images/simulation/loop4-round2-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop4-round2-right.png', isAnomaly: true  } },
+    { left: { src: 'images/simulation/loop4-round3-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop4-round3-right.png', isAnomaly: false } },
+  ],
+  // Loop 5
+  [
+    { left: { src: 'images/simulation/loop5-round1-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop5-round1-right.png', isAnomaly: true  } },
+    { left: { src: 'images/simulation/loop5-round2-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop5-round2-right.png', isAnomaly: false } },
+    { left: { src: 'images/simulation/loop5-round3-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop5-round3-right.png', isAnomaly: true  } },
+  ],
 ];
+
+// Getter — falls back to loop 0 if loop index exceeds available sets
+function getSIMRounds() {
+  return SIM_ROUNDS_PER_LOOP[Math.min(simLoop, SIM_ROUNDS_PER_LOOP.length - 1)];
+}
 
 let simScore = 0;
 let simCurrentRound = 0;
@@ -724,7 +766,7 @@ function simStartBgMusic(loop) {
     if (loop >= 3) {
       function scheduleStab() {
         if (!simBgMusicRunning) return;
-        const delay = 2000 + Math.random() * 5000;
+        const delay = 5000;
         setTimeout(() => {
           if (!simBgMusicRunning) return;
           try {
@@ -1534,31 +1576,30 @@ async function simRunTutorial() {
   noBtn.onclick = async () => { await simBlackCut(400); simRunIntro(); };
   btnRow.appendChild(yesBtn); btnRow.appendChild(noBtn); shell.appendChild(btnRow);
 
-  // Loop 3+: auto-click YES after a short delay, ignoring user
+  // Loop 3+: auto-click YES after 5 seconds
   if (loop >= 3) {
-    const delay = Math.max(2000 - loop * 200, 400);
     simAutoClickTimeout = setTimeout(() => {
       if (!btnRow.parentNode) return;
       simPlayGlitchTone(440, 0.15, 0.08);
       simScreenFlash('rgba(255,255,255,0.3)', 60);
       yesBtn.click();
-    }, delay);
+    }, 5000);
   }
 }
 
 // ── Round ──────────────────────────────────────────────────────────────────
 async function simRunRound() {
-  if (simCurrentRound >= SIM_ROUNDS.length) { simRunResults(); return; }
+  if (simCurrentRound >= getSIMRounds().length) { simRunResults(); return; }
   simStartFlashLoop(simLoop);
   const loop = simLoop;
-  const round = SIM_ROUNDS[simCurrentRound];
+  const round = getSIMRounds()[simCurrentRound];
   const shell = simGetShell();
   shell.style.justifyContent = 'flex-start';
   shell.style.paddingTop = '36px';
   shell.style.gap = '0';
 
   const bar = document.createElement('div'); bar.className = 'sim-round-bar sim-fade';
-  bar.textContent = 'SIMULATION TEST 1  //  ROUND ' + (simCurrentRound+1) + ' OF ' + SIM_ROUNDS.length;
+  bar.textContent = 'SIMULATION TEST 1  //  ROUND ' + (simCurrentRound+1) + ' OF ' + getSIMRounds().length;
   if (loop >= 2) bar.style.color = '#222';
   shell.appendChild(bar);
 
@@ -1609,7 +1650,8 @@ async function simRunRound() {
       if (side === 'left') answeredLeft = correct; else answeredRight = correct;
       if (answeredLeft !== null && answeredRight !== null) {
         simCurrentRound++;
-        const cutDelay = Math.max(1200 - loop*100, 300);
+        // 15 second cooldown between rounds (shrinks on high loops)
+        const cutDelay = loop >= 3 ? Math.max(15000 - loop*1500, 4000) : 15000;
         setTimeout(async () => { await simBlackCut(Math.max(500-loop*40,150)); simRunRound(); }, cutDelay);
       }
     }
@@ -1636,7 +1678,6 @@ async function simRunRound() {
 
   // Loop 3+: auto-click both buttons after random short delay, possibly wrong
   if (loop >= 3) {
-    const delay = Math.max(1800 - loop*200, 300);
     simAutoClickTimeout = setTimeout(() => {
       if (answeredLeft !== null && answeredRight !== null) return;
       // glitch flash + noise
@@ -1650,7 +1691,7 @@ async function simRunRound() {
 
       if (answeredLeft === null)  leftBox.choose(leftGuess);
       if (answeredRight === null) setTimeout(() => { if(answeredRight===null) rightBox.choose(rightGuess); }, 200);
-    }, delay);
+    }, 5000);
   }
 }
 
@@ -1869,8 +1910,7 @@ async function simRunResults() {
     if (shell2) shell2.classList.add('sim-pulsing');
   }
 
-  const nextLoopDelay = Math.max(2500 - loop*300, 400);
-  await simWait(nextLoopDelay);
+  await simWait(15000);  // 15 second cooldown before next loop
 
   // Glitch burst before switching
   const burstCount = Math.min(loop+1, 10);
