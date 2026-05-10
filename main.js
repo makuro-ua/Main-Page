@@ -338,9 +338,6 @@ window.setDimImage = (id, src) => {
 }
 
 
-
-
-
 // ── SIMULATION TEST 1 ──────────────────────────────────────────────────────
 
 // Each loop has its own set of 3 rounds with different images
@@ -348,39 +345,39 @@ window.setDimImage = (id, src) => {
 const SIM_ROUNDS_PER_LOOP = [
   // Loop 0
   [
-    { left: { src: 'images/simulation/loop0-round1-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop0-round1-right.png', isAnomaly: false } },
-    { left: { src: 'images/simulation/loop0-round2-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop0-round2-right.png', isAnomaly: true  } },
-    { left: { src: 'images/simulation/loop0-round3-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop0-round3-right.png', isAnomaly: false } },
+    'images/simulation/loop0-round1-left.png','images/simulation/loop0-round1-right.png',
+    'images/simulation/loop0-round2-left.png','images/simulation/loop0-round2-right.png',
+    'images/simulation/loop0-round3-left.png','images/simulation/loop0-round3-right.png',
   ],
   // Loop 1
   [
-    { left: { src: 'images/simulation/loop1-round1-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop1-round1-right.png', isAnomaly: true  } },
-    { left: { src: 'images/simulation/loop1-round2-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop1-round2-right.png', isAnomaly: false } },
-    { left: { src: 'images/simulation/loop1-round3-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop1-round3-right.png', isAnomaly: true  } },
+    'images/simulation/loop1-round1-left.png','images/simulation/loop1-round1-right.png',
+    'images/simulation/loop1-round2-left.png','images/simulation/loop1-round2-right.png',
+    'images/simulation/loop1-round3-left.png','images/simulation/loop1-round3-right.png',
   ],
   // Loop 2
   [
-    { left: { src: 'images/simulation/loop2-round1-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop2-round1-right.png', isAnomaly: false } },
-    { left: { src: 'images/simulation/loop2-round2-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop2-round2-right.png', isAnomaly: true  } },
-    { left: { src: 'images/simulation/loop2-round3-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop2-round3-right.png', isAnomaly: false } },
+    'images/simulation/loop2-round1-left.png','images/simulation/loop2-round1-right.png',
+    'images/simulation/loop2-round2-left.png','images/simulation/loop2-round2-right.png',
+    'images/simulation/loop2-round3-left.png','images/simulation/loop2-round3-right.png',
   ],
   // Loop 3
   [
-    { left: { src: 'images/simulation/loop3-round1-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop3-round1-right.png', isAnomaly: true  } },
-    { left: { src: 'images/simulation/loop3-round2-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop3-round2-right.png', isAnomaly: false } },
-    { left: { src: 'images/simulation/loop3-round3-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop3-round3-right.png', isAnomaly: true  } },
+    'images/simulation/loop3-round1-left.png','images/simulation/loop3-round1-right.png',
+    'images/simulation/loop3-round2-left.png','images/simulation/loop3-round2-right.png',
+    'images/simulation/loop3-round3-left.png','images/simulation/loop3-round3-right.png',
   ],
   // Loop 4
   [
-    { left: { src: 'images/simulation/loop4-round1-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop4-round1-right.png', isAnomaly: false } },
-    { left: { src: 'images/simulation/loop4-round2-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop4-round2-right.png', isAnomaly: true  } },
-    { left: { src: 'images/simulation/loop4-round3-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop4-round3-right.png', isAnomaly: false } },
+    'images/simulation/loop4-round1-left.png','images/simulation/loop4-round1-right.png',
+    'images/simulation/loop4-round2-left.png','images/simulation/loop4-round2-right.png',
+    'images/simulation/loop4-round3-left.png','images/simulation/loop4-round3-right.png',
   ],
   // Loop 5
   [
-    { left: { src: 'images/simulation/loop5-round1-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop5-round1-right.png', isAnomaly: true  } },
-    { left: { src: 'images/simulation/loop5-round2-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop5-round2-right.png', isAnomaly: false } },
-    { left: { src: 'images/simulation/loop5-round3-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop5-round3-right.png', isAnomaly: true  } },
+    'images/simulation/loop5-round1-left.png','images/simulation/loop5-round1-right.png',
+    'images/simulation/loop5-round2-left.png','images/simulation/loop5-round2-right.png',
+    'images/simulation/loop5-round3-left.png','images/simulation/loop5-round3-right.png',
   ],
 ];
 
@@ -797,10 +794,25 @@ function simStopBgMusic() {
 
 // ── Ambient creepy image flashes (runs throughout simulation) ──────────────
 const SIM_ALL_IMGS = [
-  'images/simulation/sim-round1-left.png','images/simulation/sim-round1-right.png',
-  'images/simulation/sim-round2-left.png','images/simulation/sim-round2-right.png',
-  'images/simulation/sim-round3-left.png','images/simulation/sim-round3-right.png',
-  'images/simulation/sim-tutorial-anomaly.png','images/simulation/sim-tutorial-normal.png',
+    'images/simulation/loop0-round1-left.png','images/simulation/loop0-round1-right.png',
+    'images/simulation/loop0-round2-left.png','images/simulation/loop0-round2-right.png',
+    'images/simulation/loop0-round3-left.png','images/simulation/loop0-round3-right.png',
+    'images/simulation/loop1-round1-left.png','images/simulation/loop1-round1-right.png',
+    'images/simulation/loop1-round2-left.png','images/simulation/loop1-round2-right.png',
+    'images/simulation/loop1-round3-left.png','images/simulation/loop1-round3-right.png',
+    'images/simulation/loop2-round1-left.png','images/simulation/loop2-round1-right.png',
+    'images/simulation/loop2-round2-left.png','images/simulation/loop2-round2-right.png',
+    'images/simulation/loop2-round3-left.png','images/simulation/loop2-round3-right.png',
+    'images/simulation/loop3-round1-left.png','images/simulation/loop3-round1-right.png',
+    'images/simulation/loop3-round2-left.png','images/simulation/loop3-round2-right.png',
+    'images/simulation/loop3-round3-left.png','images/simulation/loop3-round3-right.png',
+    'images/simulation/loop4-round1-left.png','images/simulation/loop4-round1-right.png',
+    'images/simulation/loop4-round2-left.png','images/simulation/loop4-round2-right.png',
+    'images/simulation/loop4-round3-left.png','images/simulation/loop4-round3-right.png',
+    'images/simulation/loop5-round1-left.png','images/simulation/loop5-round1-right.png',
+    'images/simulation/loop5-round2-left.png','images/simulation/loop5-round2-right.png',
+    'images/simulation/loop5-round3-left.png','images/simulation/loop5-round3-right.png',
+    'images/simulation/sim-tutorial-anomaly.png','images/simulation/sim-tutorial-normal.png',
 ];
 
 function simStartAmbientFlashes(loop) {
