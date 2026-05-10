@@ -343,39 +343,39 @@ window.setDimImage = (id, src) => {
 const SIM_ROUNDS_PER_LOOP = [
   // Loop 0
   [
-    'images/simulation/loop0-round1-left.png','images/simulation/loop0-round1-right.png',
-    'images/simulation/loop0-round2-left.png','images/simulation/loop0-round2-right.png',
-    'images/simulation/loop0-round3-left.png','images/simulation/loop0-round3-right.png',
+    { left: { src: 'images/simulation/loop0-round1-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop0-round1-right.png', isAnomaly: false } },
+    { left: { src: 'images/simulation/loop0-round2-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop0-round2-right.png', isAnomaly: true  } },
+    { left: { src: 'images/simulation/loop0-round3-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop0-round3-right.png', isAnomaly: false } },
   ],
   // Loop 1
   [
-    'images/simulation/loop1-round1-left.png','images/simulation/loop1-round1-right.png',
-    'images/simulation/loop1-round2-left.png','images/simulation/loop1-round2-right.png',
-    'images/simulation/loop1-round3-left.png','images/simulation/loop1-round3-right.png',
+    { left: { src: 'images/simulation/loop1-round1-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop1-round1-right.png', isAnomaly: true  } },
+    { left: { src: 'images/simulation/loop1-round2-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop1-round2-right.png', isAnomaly: false } },
+    { left: { src: 'images/simulation/loop1-round3-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop1-round3-right.png', isAnomaly: true  } },
   ],
   // Loop 2
   [
-    'images/simulation/loop2-round1-left.png','images/simulation/loop2-round1-right.png',
-    'images/simulation/loop2-round2-left.png','images/simulation/loop2-round2-right.png',
-    'images/simulation/loop2-round3-left.png','images/simulation/loop2-round3-right.png',
+    { left: { src: 'images/simulation/loop2-round1-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop2-round1-right.png', isAnomaly: false } },
+    { left: { src: 'images/simulation/loop2-round2-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop2-round2-right.png', isAnomaly: true  } },
+    { left: { src: 'images/simulation/loop2-round3-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop2-round3-right.png', isAnomaly: false } },
   ],
   // Loop 3
   [
-    'images/simulation/loop3-round1-left.png','images/simulation/loop3-round1-right.png',
-    'images/simulation/loop3-round2-left.png','images/simulation/loop3-round2-right.png',
-    'images/simulation/loop3-round3-left.png','images/simulation/loop3-round3-right.png',
+    { left: { src: 'images/simulation/loop3-round1-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop3-round1-right.png', isAnomaly: true  } },
+    { left: { src: 'images/simulation/loop3-round2-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop3-round2-right.png', isAnomaly: false } },
+    { left: { src: 'images/simulation/loop3-round3-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop3-round3-right.png', isAnomaly: true  } },
   ],
   // Loop 4
   [
-    'images/simulation/loop4-round1-left.png','images/simulation/loop4-round1-right.png',
-    'images/simulation/loop4-round2-left.png','images/simulation/loop4-round2-right.png',
-    'images/simulation/loop4-round3-left.png','images/simulation/loop4-round3-right.png',
+    { left: { src: 'images/simulation/loop4-round1-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop4-round1-right.png', isAnomaly: false } },
+    { left: { src: 'images/simulation/loop4-round2-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop4-round2-right.png', isAnomaly: true  } },
+    { left: { src: 'images/simulation/loop4-round3-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop4-round3-right.png', isAnomaly: false } },
   ],
   // Loop 5
   [
-    'images/simulation/loop5-round1-left.png','images/simulation/loop5-round1-right.png',
-    'images/simulation/loop5-round2-left.png','images/simulation/loop5-round2-right.png',
-    'images/simulation/loop5-round3-left.png','images/simulation/loop5-round3-right.png',
+    { left: { src: 'images/simulation/loop5-round1-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop5-round1-right.png', isAnomaly: true  } },
+    { left: { src: 'images/simulation/loop5-round2-left.png',  isAnomaly: true  }, right: { src: 'images/simulation/loop5-round2-right.png', isAnomaly: false } },
+    { left: { src: 'images/simulation/loop5-round3-left.png',  isAnomaly: false }, right: { src: 'images/simulation/loop5-round3-right.png', isAnomaly: true  } },
   ],
 ];
 
