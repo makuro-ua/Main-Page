@@ -59,15 +59,18 @@ Narrators may either be hostile or friendly. Nonetheless, they have one thing in
 
 The Lord is an entity within this dimension, supposedly the one controlling everything within it. Nothing else is known of this dimension.`
   },
-  'threaders': {
-    text: `DESIGNATION: The Threaders
-CLASSIFICATION: Anomalous Entity
-SCENE TYPE: Mobile / Migratory
-THREAT INDEX: High
+  'foliersinn': {
+    html: `<pre style="font-family:inherit;white-space:pre-wrap;font-size:12px;line-height:1.9;color:#3d1010;">SCENE: Folier's Inn
+DIMENSION: 08□
+CLASSIFICATION: Level 1
+POINT ZERO: Yes
 
-This picture was recovered from Agent [ ■■■■■■ ]'s field camera. Agent [ ■■■■■■ ]'s yet to be found.
+* This picture was taken by Senior Agent Lairus.
+* The Folier's Inn is Dimension 08□'s Point 0 wherein agents usually use it as a reference for the Dimension's checkpoint.
+* Dimension 08□ is in a Level 1 category. Senior Agent Lairus says that this dimension sells very literal and accurate things. He had bought a dozen watches from said dimension.
+* He had given Agent [ ■■■■■■■ ] and Agent [ ■■■■■■■■■ ] one.
 
-"The Threaders" or in other records "The Lovers", in this image form a vague silhouette of a pair of what are supposed to be humans conjoined by threads. This is believed to be the work of Yŭxuān [No. 222], an entity from a Level 4 dimension.`
+<span style="background:#000000;color:#000000;cursor:text;user-select:text;" title="Select to reveal">"Remember Agent, this place does not accept check-ins despite being an inn. This place does not have any human inhabitants. Point zeroes never have any inhabitants. Got that?"</span></pre>`
   }
 };
 
@@ -76,7 +79,13 @@ function openScene(id) {
   const data = SCENE_DATA[id];
   if (!data) return;
   const textEl = document.getElementById('scene-text-' + id);
-  if (textEl) setTimeout(() => typewrite(textEl, data.text, 18), 300);
+  if (textEl) {
+    if (data.html) {
+      setTimeout(() => { textEl.innerHTML = data.html; }, 300);
+    } else {
+      setTimeout(() => typewrite(textEl, data.text, 18), 300);
+    }
+  }
 }
 
 window.setSceneImage = (id, src) => {
@@ -152,6 +161,23 @@ ROLE: Chief of Psychological Affairs — DSS
 STATUS: Active
 
 Dr. Booker has been serving DSS since he was hired to be the psychology doctor of the Dimension Sorting Society. Aside being head over heels for Dr. Heaves, his work is still exceptional as he has been able to skim through many agents and entities alike.`
+  },
+  'lairus': {
+    text: `NAME: Lairus
+ROLE: Senior Agent — Field Work Sector
+STATUS: Active
+
+Senior Agent Lairus looks very peculiar at first. We can't even take a picture of him without being considered anomalous because no matter what, his face will be censored (?).
+
+Nonetheless, Senior Agent Lairus is actually very efficient as a field agent. He had been into thirty to fifty dimensions already and had catalogued over a hundred anomalous events, people and even objects.
+
+A good chunk of our Archives files have his name on it.
+
+He is barely around the office because he's a Senior Agent but we had a few exchanges with him and other Agents will say he's weird, strange or even intimidating but he's actually pretty nice and decent when you get to talk to him.
+
+He always has an advice or two about field work and it's like he had memorized Director Voirose's books about "DOs AND DONTs OF DIMENSION HOPPING" which spans to three volumes with a lot of pages.
+
+He is also very knowledgeable with simulations. He knows his way in every simulation as we've heard — and he only died 48 times in over a hundred simulations in total. That's a record every agent wants to have, since its very few if you look at it. It's almost a perfect 50/50 situation!`
   }
 };
 
@@ -204,6 +230,9 @@ This dimension works within the logic of a Visual Novel of a romantic genre wher
 The names mentioned above are not catalogued as anomalies by DSS as they are observed to properly follow their story routes naturally. All of the names above are the names of supposedly "Voice Actor" characters whose routes vary depending on which was chosen.
 
 As for now only one rogue character from this dimension was put under surveillance, a non-playable (romanceable) character named Sr_u! which was used by a Senior Agent as a backdoor exit and has since displayed anomalous abilities.`
+  },
+  'unrds': {
+    text: `DESIGNATION: Unrd's\nCLASSIFICATION: Tertiary\nTHREAT INDEX: Unknown\n\nMaecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.\n\nNullam varius, turpis molestie dictum semper, ex quam interdum quam, vitae pulvinar ante ipsum vulputate ipsum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper.\n\nPellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`
   }
 };
 
@@ -1571,8 +1600,8 @@ async function simRunTutorial() {
   noBtn.onclick = async () => { await simBlackCut(400); simRunIntro(); };
   btnRow.appendChild(yesBtn); btnRow.appendChild(noBtn); shell.appendChild(btnRow);
 
-  // Loop 3+: auto-click YES after 5 seconds
-  if (loop >= 3) {
+  // Loop 2+: auto-click YES after 5 seconds
+  if (loop >= 2) {
     simAutoClickTimeout = setTimeout(() => {
       if (!btnRow.parentNode) return;
       simPlayGlitchTone(440, 0.15, 0.08);
@@ -1645,8 +1674,9 @@ async function simRunRound() {
       if (side === 'left') answeredLeft = correct; else answeredRight = correct;
       if (answeredLeft !== null && answeredRight !== null) {
         simCurrentRound++;
-        // Proceed immediately once both answered — no cooldown
-        setTimeout(async () => { await simBlackCut(Math.max(500-loop*40,150)); simRunRound(); }, 800);
+        // 15 second cooldown between rounds (shrinks on high loops)
+        const cutDelay = loop >= 3 ? Math.max(15000 - loop*1500, 4000) : 15000;
+        setTimeout(async () => { await simBlackCut(Math.max(500-loop*40,150)); simRunRound(); }, cutDelay);
       }
     }
 
@@ -1670,23 +1700,21 @@ async function simRunRound() {
   simSpeak(instText, loop);
   await simType(instEl, instText, Math.max(55 - loop*3, 20), loop);
 
-  // Loop 3+: auto-click both buttons after 5s, possibly wrong
-  if (loop >= 3) {
+  // Loop 2+: auto-click both buttons after random short delay, possibly wrong
+  if (loop >= 2) {
     simAutoClickTimeout = setTimeout(() => {
       if (answeredLeft !== null && answeredRight !== null) return;
+      // glitch flash + noise
       simPlayError(0.07 * Math.min(loop,5));
       simScreenFlash('rgba(255,0,0,0.12)', 80);
+
+      // randomly click — sometimes correct, sometimes wrong, gets more wrong as loop increases
       const wrongChance = Math.min((loop-2)*0.2, 0.85);
       const leftGuess  = Math.random() < wrongChance ? !round.left.isAnomaly  : round.left.isAnomaly;
       const rightGuess = Math.random() < wrongChance ? !round.right.isAnomaly : round.right.isAnomaly;
+
       if (answeredLeft === null)  leftBox.choose(leftGuess);
       if (answeredRight === null) setTimeout(() => { if(answeredRight===null) rightBox.choose(rightGuess); }, 200);
-    }, 5000);
-  } else {
-    // Loops 0-2: auto-answer correctly after 5s if player hasn't answered
-    simAutoClickTimeout = setTimeout(() => {
-      if (answeredLeft === null)  leftBox.choose(round.left.isAnomaly);
-      if (answeredRight === null) setTimeout(() => { if(answeredRight===null) rightBox.choose(round.right.isAnomaly); }, 200);
     }, 5000);
   }
 }
@@ -1906,7 +1934,7 @@ async function simRunResults() {
     if (shell2) shell2.classList.add('sim-pulsing');
   }
 
-  await simWait(5000);  // 5 second cooldown before next loop
+  await simWait(15000);  // 15 second cooldown before next loop
 
   // Glitch burst before switching
   const burstCount = Math.min(loop+1, 10);
