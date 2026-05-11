@@ -210,6 +210,7 @@
         </div>
       </div>
 
+
       <!-- CATALOGUE SUB-PAGES -->
       <div class="page-panel" id="page-dim-records">
         <div class="content-card">
@@ -226,6 +227,15 @@
               </div>
               <div class="dim-card-name">The World</div>
             </div>
+            <div class="dim-card" onclick="openDimension('bluebells')">
+              <div class="dim-portrait-wrap">
+                <img class="dim-portrait" id="dim-img-bluebells" src="images/dimensions/dim-record-2.png" alt="Love Dubs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                <div class="dim-portrait-ph" id="dim-ph-bluebells">🖼</div>
+                <div class="dim-card-overlay">VIEW RECORD</div>
+              </div>
+              <div class="dim-card-name">"Love Dubs"</div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -249,6 +259,26 @@
           </div>
         </div>
       </div>
+
+      <div class="page-panel" id="page-dim-love-dubs">
+        <div class="content-card">
+          <div class="dim-header-bar">
+            <div class="dim-title-box">DIMENSION RECORDS</div>
+            <button class="dim-close-btn" onclick="showPage('dim-records',null)">✕</button>
+          </div>
+          <div class="dim-detail">
+            <div class="dim-detail-portrait-wrap">
+              <img class="dim-detail-portrait" id="dim-detail-img-love-dubs" src="images/dimensions/dim-record-2.png" alt="Love Dubs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+              <div class="dim-detail-portrait-ph">🖼</div>
+            </div>
+            <div class="dim-detail-body">
+              <div class="dim-detail-name">"LOVE DUBS" — A VISUAL NOVEL</div>
+              <div class="dim-detail-text" id="dim-text-love-dubs"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
       <!-- ANOMALOUS SCENES -->
       <div class="page-panel" id="page-anomalous">

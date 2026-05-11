@@ -222,7 +222,7 @@ When entering this dimension, the agent would often be sent to the basement. How
 
 Nothing else is known in this dimension.`
   },
-  'bluebells': {
+  'love-dubs': {
     text: `DIMENSION NAME: "Love Dubs" — A Visual Novel
 CLASSIFICATION: Level 2
 ENTITIES KNOWN: Sr_u! (Rogue)
