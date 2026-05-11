@@ -14,7 +14,7 @@
       <img id="logo-img" src="images/ui/logo.png" alt="Logo" style="display:none;"/>
     </div>
     <div class="nav-item" id="nav-profile"     onclick="showPage('profile',this)">Agent Profile</div>
-    <div class="nav-item active" id="nav-catalogue"  onclick="showPage('catalogue',this)">Catalogue</div>
+    <div class="nav-item" id="nav-catalogue"  onclick="showPage('catalogue',this)">Catalogue</div>
     <div class="nav-item" id="nav-assignments" onclick="showPage('assignments',this)">Assignments</div>
     <div class="nav-item" id="nav-chatlog"     onclick="showPage('chatlog',this)">Chat Log</div>
     <div class="nav-item" id="nav-about"       onclick="showPage('about',this)">About Us</div>
@@ -226,15 +226,6 @@
               </div>
               <div class="dim-card-name">The World</div>
             </div>
-            <div class="dim-card" onclick="openDimension('bluebells')">
-              <div class="dim-portrait-wrap">
-                <img class="dim-portrait" id="dim-img-bluebells" src="images/dimensions/dim-record-2.png" alt="Love Dubs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-                <div class="dim-portrait-ph" id="dim-ph-bluebells">🖼</div>
-                <div class="dim-card-overlay">VIEW RECORD</div>
-              </div>
-              <div class="dim-card-name">"Love Dubs"</div>
-            </div>
-
           </div>
         </div>
       </div>
@@ -254,25 +245,6 @@
             <div class="dim-detail-body">
               <div class="dim-detail-name">THE WORLD</div>
               <div class="dim-detail-text" id="dim-text-the-world"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="page-panel" id="page-dim-bluebells">
-        <div class="content-card">
-          <div class="dim-header-bar">
-            <div class="dim-title-box">DIMENSION RECORDS</div>
-            <button class="dim-close-btn" onclick="showPage('dim-records',null)">✕</button>
-          </div>
-          <div class="dim-detail">
-            <div class="dim-detail-portrait-wrap">
-              <img class="dim-detail-portrait" id="dim-detail-img-bluebells" src="images/dimensions/dim-record-2.png" alt="Love Dubs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-              <div class="dim-detail-portrait-ph">🖼</div>
-            </div>
-            <div class="dim-detail-body">
-              <div class="dim-detail-name">"LOVE DUBS" — A VISUAL NOVEL</div>
-              <div class="dim-detail-text" id="dim-text-bluebells"></div>
             </div>
           </div>
         </div>
@@ -309,7 +281,7 @@
               <div class="scene-label">
                 <div class="scene-name">Folier's Inn</div>
                 <div class="scene-sub">(Dimension 08□ — Level 1)</div>
-                <div class="scene-desc">Point Zero of Dimension 08□. Photographed by Senior Agent Lairus. No human inhabitants. Does not accept check-ins despite being an inn.</div>
+                <div class="scene-desc">This picture was taken by Senior Agent Lairus. The Folier's Inn is Dimension 08□'s Point 0, used by agents as a reference checkpoint. Senior Agent Lairus notes this dimension sells very literal and accurate things — he had bought a dozen watches from said dimension.</div>
               </div>
             </div>
 
@@ -349,11 +321,8 @@
               <div class="scene-detail-landscape-ph">🖼</div>
             </div>
             <div class="dim-detail-body">
-              <div class="dim-detail-name">FOLIER'S INN<span style="font-size:10px;letter-spacing:1px;color:#7a3b1e;margin-left:10px;">(DIMENSION 08□)</span></div>
+              <div class="dim-detail-name">FOLIER'S INN</div>
               <div class="dim-detail-text" id="scene-text-foliersinn"></div>
-              <div id="foliersinn-quote-wrap" style="margin-top:18px;display:none;">
-                <div id="foliersinn-quote" style="background:#000;color:#000;font-family:'Courier New',monospace;font-size:12px;line-height:1.8;padding:12px 16px;letter-spacing:0.5px;max-width:520px;cursor:pointer;" title="Highlight to read" onclick="this.style.color='#fff'"></div>
-              </div>
             </div>
           </div>
         </div>
@@ -389,6 +358,20 @@
                 <div class="dim-card-overlay">VIEW RECORD</div>
               </div>
               <div class="dim-card-name">Dr. Booker</div>
+            </div>
+          </div>
+
+          <div class="dim-header-bar" style="margin-top:16px;">
+            <div class="dim-title-box">SENIOR AGENTS</div>
+          </div>
+          <div class="dim-gallery">
+            <div class="dim-card" onclick="openPersonnel('lairus')">
+              <div class="dim-portrait-wrap">
+                <img class="dim-portrait" id="per-img-lairus" src="images/personnel/lairus.png" alt="Lairus" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                <div class="dim-portrait-ph">🖼</div>
+                <div class="dim-card-overlay">VIEW RECORD</div>
+              </div>
+              <div class="dim-card-name">Lairus</div>
             </div>
           </div>
         </div>
@@ -451,6 +434,26 @@
           </div>
         </div>
       </div>
+
+      <div class="page-panel" id="page-per-lairus">
+        <div class="content-card">
+          <div class="dim-header-bar">
+            <div class="dim-title-box">SENIOR AGENTS</div>
+            <button class="dim-close-btn" onclick="showPage('personnels',null)">✕</button>
+          </div>
+          <div class="dim-detail">
+            <div class="dim-detail-portrait-wrap">
+              <img class="dim-detail-portrait" id="per-detail-img-lairus" src="images/personnel/lairus.png" alt="Lairus" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+              <div class="dim-detail-portrait-ph">🖼</div>
+            </div>
+            <div class="dim-detail-body">
+              <div class="dim-detail-name">LAIRUS</div>
+              <div class="dim-detail-text" id="per-text-lairus"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- CASES — infinite loading gag -->
       <div class="page-panel" id="page-cases">
         <div class="content-card">
@@ -793,6 +796,9 @@
     </div>
   </div>
 </div>
+<div id="sim-scanline"></div>
+
+<!-- CRASH SCREEN -->
 <div id="sim-crash-screen" style="position:fixed;inset:0;background:#f3f3f3;z-index:99999;display:none;flex-direction:column;align-items:center;justify-content:center;font-family:Arial,sans-serif;gap:12px;">
   <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:4px;">
     <rect x="8" y="4" width="32" height="40" rx="2" stroke="#555" stroke-width="2.5" fill="none"/>

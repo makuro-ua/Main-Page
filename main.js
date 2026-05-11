@@ -1,4 +1,3 @@
-
 // ── Generic loading loop (personals, evaluations, simulations) ───────────────
 const LOADING_MSGS = {
   personals:   ['Retrieving personal records...','Establishing secure connection...','Authenticating credentials...','Fetching archived data...','Decrypting file index...','Access denied — retrying...','Almost there...'],
@@ -163,6 +162,23 @@ ROLE: Mortuary Scientist — DSS
 STATUS: Active
 
 Rasputin C. is a mortician. That's all we all know about him. Nobody knows why he dresses like that. Maybe Dir. Voirose knows?`
+  },
+  'lairus': {
+    text: `NAME: Senior Agent Lairus
+ROLE: Senior Field Agent
+STATUS: Active
+
+Senior Agent Lairus looks very peculiar at first. We can't even take a picture of him without being considered anomalous because no matter what, his face will be censored (?).
+
+Nonetheless, Senior Agent Lairus is actually very efficient as a field agent. He had been into thirty to fifty dimensions already and had catalogued over a hundred anomalous events, people and even objects.
+
+A good chunk of our Archives files have his name on it.
+
+He is barely around the office because he's a Senior Agent but we had a few exchanges with him and other Agents will say he's weird, strange or even intimidating but he's actually pretty nice and decent when you get to talk to him.
+
+He always has an advice or two about field work and it's like he had memorized Director Voirose's books about "DOs AND DONTs OF DIMENSION HOPPING" which spans to three volumes with a lot of pages.
+
+He is also very knowledgeable with simulations. He knows his way in every simulation as we've heard — and he only died 48 times in over a hundred simulations in total. That's a record every agent wants to have, since its very few if you look at it. It's almost a perfect 50/50 situation!`
   },
   'booker': {
     text: `NAME: Dr. Magnus Booker
@@ -1955,3 +1971,4 @@ async function simRunResults() {
   simRunning = true;
   simRunIntro();
 }
+
