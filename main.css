@@ -95,7 +95,8 @@ body {
 }
 
 .sidebar {
-  background: #3F1417;
+  color: #f0e4d0;
+  background: #6c2227;
   border-right: 1px solid #ddd0bc;
   padding: 18px;
   display: flex;
@@ -143,7 +144,7 @@ body {
 .red-sq {
   width: 12px;
   height: 12px;
-  background: #8b1a1a;
+  background: #ffffff;
   border-radius: 2px;
   flex-shrink: 0;
 }
