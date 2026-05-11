@@ -60,17 +60,8 @@ Narrators may either be hostile or friendly. Nonetheless, they have one thing in
 The Lord is an entity within this dimension, supposedly the one controlling everything within it. Nothing else is known of this dimension.`
   },
   'foliersinn': {
-    text: `<pre style="font-family:inherit;white-space:pre-wrap;font-size:12px;line-height:1.9;color:#3d1010;">SCENE: Folier's Inn
-DIMENSION: 08□
-CLASSIFICATION: Level 1
-POINT ZERO: Yes
-
-* This picture was taken by Senior Agent Lairus.
-* The Folier's Inn is Dimension 08□'s Point 0 wherein agents usually use it as a reference for the Dimension's checkpoint.
-* Dimension 08□ is in a Level 1 category. Senior Agent Lairus says that this dimension sells very literal and accurate things. He had bought a dozen watches from said dimension.
-* He had given Agent [ ■■■■■■■ ] and Agent [ ■■■■■■■■■ ] one.
-
-<span style="background:#000000;color:#000000;cursor:text;user-select:text;" title="Select to reveal">"Remember Agent, this place does not accept check-ins despite being an inn. This place does not have any human inhabitants. Point zeroes never have any inhabitants. Got that?"</span></pre>`
+    text: `SCENE: Folier's Inn\nDIMENSION: 08□\nCLASSIFICATION: Level 1\nPOINT ZERO: Yes\n\n* This picture was taken by Senior Agent Lairus.\n* The Folier's Inn is Dimension 08□'s Point 0 wherein agents usually use it as a reference for the Dimension's checkpoint.\n* Dimension 08□ is in a Level 1 category. Senior Agent Lairus says that this dimension sells very literal and accurate things. He had bought a dozen watches from said dimension.\n* He had given Agent [ ■■■■■■■ ] and Agent [ ■■■■■■■■■ ] one.\n\n`,
+    hiddenSpan: `<span style="background:#000000;color:#000000;cursor:text;user-select:text;" title="Select to reveal">"Remember Agent, this place does not accept check-ins despite being an inn. This place does not have any human inhabitants. Point zeroes never have any inhabitants. Got that?"</span>`
   }
 };
 
@@ -214,7 +205,7 @@ When entering this dimension, the agent would often be sent to the basement. How
 
 Nothing else is known in this dimension.`
   },
-  'bluebells': {
+  'love-dubs': {
     text: `DIMENSION NAME: "Love Dubs" — A Visual Novel
 CLASSIFICATION: Level 2
 ENTITIES KNOWN: Sr_u! (Rogue)
@@ -231,9 +222,7 @@ The names mentioned above are not catalogued as anomalies by DSS as they are obs
 
 As for now only one rogue character from this dimension was put under surveillance, a non-playable (romanceable) character named Sr_u! which was used by a Senior Agent as a backdoor exit and has since displayed anomalous abilities.`
   },
-  'unrds': {
-    text: `DESIGNATION: Unrd's\nCLASSIFICATION: Tertiary\nTHREAT INDEX: Unknown\n\nMaecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.\n\nNullam varius, turpis molestie dictum semper, ex quam interdum quam, vitae pulvinar ante ipsum vulputate ipsum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper.\n\nPellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`
-  }
+
 };
 
 // ── Typewriter ──────────────────────────────────────────────────────────────
