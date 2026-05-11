@@ -1966,3 +1966,4 @@ async function simRunResults() {
   simRunning = true;
   simRunIntro();
 }
+}
