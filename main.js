@@ -581,7 +581,7 @@ function simStartTTSKeepalive() {
     if (window.speechSynthesis && window.speechSynthesis.paused) {
       window.speechSynthesis.resume();
     }
-  }, 10000);
+  }, 5000);
 }
 function simStopTTSKeepalive() {
   if (simTTSKeepalive) { clearInterval(simTTSKeepalive); simTTSKeepalive = null; }
