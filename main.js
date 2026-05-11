@@ -71,22 +71,14 @@ function openScene(id) {
   if (!data) return;
   const textEl = document.getElementById('scene-text-' + id);
   if (textEl) {
-    if (data.text && data.hiddenSpan) {
-      setTimeout(() => {
-        typewrite(textEl, data.text, 18);
-        // Wait for typewrite to finish (18ms per char + buffer)
-        const delay = data.text.length * 18 + 400;
-        setTimeout(() => {
-          const span = document.createElement('span');
-          span.innerHTML = data.hiddenSpan;
-          textEl.appendChild(span);
-        }, delay);
-      }, 300);
+    if (data.html) {
+      setTimeout(() => { textEl.innerHTML = data.html; }, 300);
     } else {
       setTimeout(() => typewrite(textEl, data.text, 18), 300);
     }
   }
 }
+
 window.setSceneImage = (id, src) => {
   const thumb  = document.getElementById('scene-img-' + id);
   const detail = document.getElementById('scene-detail-img-' + id);
@@ -255,10 +247,6 @@ function typewrite(el, text, speed) {
 }
 
 // ── Open a dimension detail page ────────────────────────────────────────────
-function openDimension(id) {
-  showPage('dim-' + id, null);
-  const data = DIM_DATA[id];
-  if (!data) return;
 function openDimension(id) {
   showPage('dim-' + id, null);
   const data = DIM_DATA[id];
