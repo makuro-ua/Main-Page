@@ -581,7 +581,7 @@ function simStartTTSKeepalive() {
     if (window.speechSynthesis && window.speechSynthesis.paused) {
       window.speechSynthesis.resume();
     }
-  }, 5000);
+  }, 10000);
 }
 function simStopTTSKeepalive() {
   if (simTTSKeepalive) { clearInterval(simTTSKeepalive); simTTSKeepalive = null; }
@@ -1673,9 +1673,7 @@ async function simRunRound() {
       if (side === 'left') answeredLeft = correct; else answeredRight = correct;
       if (answeredLeft !== null && answeredRight !== null) {
         simCurrentRound++;
-        // 15 second cooldown between rounds (shrinks on high loops)
-        const cutDelay = loop >= 3 ? Math.max(15000 - loop*1500, 4000) : 15000;
-        setTimeout(async () => { await simBlackCut(Math.max(500-loop*40,150)); simRunRound(); }, cutDelay);
+         setTimeout(async () => { await simBlackCut(Math.max(500-loop*40,150)); simRunRound(); }, 800);
       }
     }
 
