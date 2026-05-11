@@ -60,15 +60,9 @@ Narrators may either be hostile or friendly. Nonetheless, they have one thing in
 
 The Lord is an entity within this dimension, supposedly the one controlling everything within it. Nothing else is known of this dimension.`
   },
-  'threaders': {
-    text: `DESIGNATION: The Threaders
-CLASSIFICATION: Anomalous Entity
-SCENE TYPE: Mobile / Migratory
-THREAT INDEX: High
-
-This picture was recovered from Agent [ ■■■■■■ ]'s field camera. Agent [ ■■■■■■ ]'s yet to be found.
-
-"The Threaders" or in other records "The Lovers", in this image form a vague silhouette of a pair of what are supposed to be humans conjoined by threads. This is believed to be the work of Yŭxuān [No. 222], an entity from a Level 4 dimension.`
+  'foliersinn': {
+    text: `SCENE: Folier's Inn\nDIMENSION: 08□\nCLASSIFICATION: Level 1\nPOINT ZERO: Yes\n\n* This picture was taken by Senior Agent Lairus.\n* The Folier's Inn is Dimension 08□'s Point 0 wherein agents usually use it as a reference for the Dimension's checkpoint.\n* Dimension 08□ is in a Level 1 category. Senior Agent Lairus says that this dimension sells very literal and accurate things. He had bought a dozen watches from said dimension.\n* He had given Agent [ ■■■■■■■ ] and Agent [ ■■■■■■■■■ ] one.\n\n`,
+    hiddenSpan: `<span style="background:#000000;color:#000000;cursor:text;user-select:text;" title="Select to reveal">"Remember Agent, this place does not accept check-ins despite being an inn. This place does not have any human inhabitants. Point zeroes never have any inhabitants. Got that?"</span>`
   }
 };
 
@@ -78,21 +72,20 @@ function openScene(id) {
   if (!data) return;
   const textEl = document.getElementById('scene-text-' + id);
   if (textEl) {
-    setTimeout(() => {
-      typewrite(textEl, data.text, 18);
-      // If scene has a quote, reveal it after text finishes
-      if (data.quote) {
-        const delay = 300 + data.text.length * 18 + 700;
+    if (data.text && data.hiddenSpan) {
+      setTimeout(() => {
+        typewrite(textEl, data.text, 18);
+        // Wait for typewrite to finish (18ms per char + buffer)
+        const delay = data.text.length * 18 + 400;
         setTimeout(() => {
-          const qWrap = document.getElementById(id + '-quote-wrap');
-          const qEl   = document.getElementById(id + '-quote');
-          if (qWrap && qEl) {
-            qWrap.style.display = 'block';
-            typewrite(qEl, data.quote, 22);
-          }
+          const span = document.createElement('span');
+          span.innerHTML = data.hiddenSpan;
+          textEl.appendChild(span);
         }, delay);
-      }
-    }, 300);
+      }, 300);
+    } else {
+      setTimeout(() => typewrite(textEl, data.text, 18), 300);
+    }
   }
 }
 
@@ -100,7 +93,7 @@ window.setSceneImage = (id, src) => {
   const thumb  = document.getElementById('scene-img-' + id);
   const detail = document.getElementById('scene-detail-img-' + id);
   [thumb, detail].forEach(img => { if (img) { img.src = src; img.style.display = 'block'; img.nextElementSibling.style.display = 'none'; }});
-}
+};
 
 // ── Cases — infinite loading loop ───────────────────────────────────────────
 const CASES_MESSAGES = [
@@ -222,7 +215,7 @@ When entering this dimension, the agent would often be sent to the basement. How
 
 Nothing else is known in this dimension.`
   },
-  'love-dubs': {
+  'bluebells': {
     text: `DIMENSION NAME: "Love Dubs" — A Visual Novel
 CLASSIFICATION: Level 2
 ENTITIES KNOWN: Sr_u! (Rogue)

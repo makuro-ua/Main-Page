@@ -308,7 +308,7 @@ body {
 
 .home-banner-slot {
   width: 100%;
-  aspect-ratio: 1400 / 500;
+  aspect-ratio: 4 / 1;
   background: #fdfaf6;
   border: 1px solid #ddd0bc;
   margin-bottom: 6px;
