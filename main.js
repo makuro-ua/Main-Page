@@ -259,6 +259,10 @@ function openDimension(id) {
   showPage('dim-' + id, null);
   const data = DIM_DATA[id];
   if (!data) return;
+function openDimension(id) {
+  showPage('dim-' + id, null);
+  const data = DIM_DATA[id];
+  if (!data) return;
   const textEl = document.getElementById('dim-text-' + id);
   if (textEl) {
     // slight delay so the panel fade-in animation runs first
