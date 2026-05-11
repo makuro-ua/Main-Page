@@ -1,3 +1,5 @@
+
+// ── Generic loading loop (personals, evaluations, simulations) ───────────────
 const LOADING_MSGS = {
   personals:   ['Retrieving personal records...','Establishing secure connection...','Authenticating credentials...','Fetching archived data...','Decrypting file index...','Access denied — retrying...','Almost there...'],
   evaluations: ['Retrieving evaluation records...','Establishing secure connection...','Authenticating credentials...','Fetching performance data...','Decrypting score index...','Synchronising with server...','Almost there...'],
@@ -59,9 +61,15 @@ Narrators may either be hostile or friendly. Nonetheless, they have one thing in
 
 The Lord is an entity within this dimension, supposedly the one controlling everything within it. Nothing else is known of this dimension.`
   },
-  'foliersinn': {
-    text: `SCENE: Folier's Inn\nDIMENSION: 08□\nCLASSIFICATION: Level 1\nPOINT ZERO: Yes\n\n* This picture was taken by Senior Agent Lairus.\n* The Folier's Inn is Dimension 08□'s Point 0 wherein agents usually use it as a reference for the Dimension's checkpoint.\n* Dimension 08□ is in a Level 1 category. Senior Agent Lairus says that this dimension sells very literal and accurate things. He had bought a dozen watches from said dimension.\n* He had given Agent [ ■■■■■■■ ] and Agent [ ■■■■■■■■■ ] one.\n\n`,
-    hiddenSpan: `<span style="background:#000000;color:#000000;cursor:text;user-select:text;" title="Select to reveal">"Remember Agent, this place does not accept check-ins despite being an inn. This place does not have any human inhabitants. Point zeroes never have any inhabitants. Got that?"</span>`
+  'threaders': {
+    text: `DESIGNATION: The Threaders
+CLASSIFICATION: Anomalous Entity
+SCENE TYPE: Mobile / Migratory
+THREAT INDEX: High
+
+This picture was recovered from Agent [ ■■■■■■ ]'s field camera. Agent [ ■■■■■■ ]'s yet to be found.
+
+"The Threaders" or in other records "The Lovers", in this image form a vague silhouette of a pair of what are supposed to be humans conjoined by threads. This is believed to be the work of Yŭxuān [No. 222], an entity from a Level 4 dimension.`
   }
 };
 
@@ -71,11 +79,21 @@ function openScene(id) {
   if (!data) return;
   const textEl = document.getElementById('scene-text-' + id);
   if (textEl) {
-    if (data.html) {
-      setTimeout(() => { textEl.innerHTML = data.html; }, 300);
-    } else {
-      setTimeout(() => typewrite(textEl, data.text, 18), 300);
-    }
+    setTimeout(() => {
+      typewrite(textEl, data.text, 18);
+      // If scene has a quote, reveal it after text finishes
+      if (data.quote) {
+        const delay = 300 + data.text.length * 18 + 700;
+        setTimeout(() => {
+          const qWrap = document.getElementById(id + '-quote-wrap');
+          const qEl   = document.getElementById(id + '-quote');
+          if (qWrap && qEl) {
+            qWrap.style.display = 'block';
+            typewrite(qEl, data.quote, 22);
+          }
+        }, delay);
+      }
+    }, 300);
   }
 }
 
@@ -152,23 +170,6 @@ ROLE: Chief of Psychological Affairs — DSS
 STATUS: Active
 
 Dr. Booker has been serving DSS since he was hired to be the psychology doctor of the Dimension Sorting Society. Aside being head over heels for Dr. Heaves, his work is still exceptional as he has been able to skim through many agents and entities alike.`
-  },
-  'lairus': {
-    text: `NAME: Lairus
-ROLE: Senior Agent — Field Work Sector
-STATUS: Active
-
-Senior Agent Lairus looks very peculiar at first. We can't even take a picture of him without being considered anomalous because no matter what, his face will be censored (?).
-
-Nonetheless, Senior Agent Lairus is actually very efficient as a field agent. He had been into thirty to fifty dimensions already and had catalogued over a hundred anomalous events, people and even objects.
-
-A good chunk of our Archives files have his name on it.
-
-He is barely around the office because he's a Senior Agent but we had a few exchanges with him and other Agents will say he's weird, strange or even intimidating but he's actually pretty nice and decent when you get to talk to him.
-
-He always has an advice or two about field work and it's like he had memorized Director Voirose's books about "DOs AND DONTs OF DIMENSION HOPPING" which spans to three volumes with a lot of pages.
-
-He is also very knowledgeable with simulations. He knows his way in every simulation as we've heard — and he only died 48 times in over a hundred simulations in total. That's a record every agent wants to have, since its very few if you look at it. It's almost a perfect 50/50 situation!`
   }
 };
 
@@ -205,7 +206,7 @@ When entering this dimension, the agent would often be sent to the basement. How
 
 Nothing else is known in this dimension.`
   },
-  'love-dubs': {
+  'bluebells': {
     text: `DIMENSION NAME: "Love Dubs" — A Visual Novel
 CLASSIFICATION: Level 2
 ENTITIES KNOWN: Sr_u! (Rogue)
