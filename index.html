@@ -227,18 +227,6 @@
               </div>
               <div class="dim-card-name">The World</div>
             </div>
-            <div class="dim-card" onclick="openDimension('bluebells')">
-              <div class="dim-portrait-wrap">
-                <img class="dim-portrait" id="dim-img-bluebells" src="images/dimensions/dim-record-2.png" alt="Love Dubs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-                <div class="dim-portrait-ph" id="dim-ph-bluebells">🖼</div>
-                <div class="dim-card-overlay">VIEW RECORD</div>
-              </div>
-              <div class="dim-card-name">Love Dubs</div>
-            </div>
-                <div class="dim-card-overlay">VIEW RECORD</div>
-              </div>
-              <div class="dim-card-name">Bluebell's</div>
-            </div>
           </div>
         </div>
       </div>
@@ -263,24 +251,6 @@
         </div>
       </div>
 
-      <div class="page-panel" id="page-dim-bluebells">
-        <div class="content-card">
-          <div class="dim-header-bar">
-            <div class="dim-title-box">DIMENSION RECORDS</div>
-            <button class="dim-close-btn" onclick="showPage('dim-records',null)">✕</button>
-          </div>
-          <div class="dim-detail">
-            <div class="dim-detail-portrait-wrap">
-              <img class="dim-detail-portrait" id="dim-detail-img-bluebells" src="images/dimensions/dim-record-2.png" alt="Love Dubs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-              <div class="dim-detail-portrait-ph">🖼</div>
-            </div>
-            <div class="dim-detail-body">
-              <div class="dim-detail-name">LOVE DUBS</div>
-              <div class="dim-detail-text" id="dim-text-bluebells"></div>
-            </div>
-          </div>
-        </div>
-      </div>
       <!-- ANOMALOUS SCENES -->
       <div class="page-panel" id="page-anomalous">
         <div class="content-card">
@@ -313,15 +283,6 @@
                 <div class="scene-name">Folier's Inn</div>
                 <div class="scene-sub">(Dimension 08□ — Level 1)</div>
                 <div class="scene-desc">This picture was taken by Senior Agent Lairus. The Folier's Inn is Dimension 08□'s Point 0, used by agents as a reference checkpoint. Senior Agent Lairus notes this dimension sells very literal and accurate things — he had bought a dozen watches from said dimension.</div>
-              </div>
-            </div>
-                <div class="scene-landscape-ph">🖼</div>
-                <div class="scene-overlay">VIEW RECORD</div>
-              </div>
-              <div class="scene-label">
-                <div class="scene-name">The Threaders</div>
-                <div class="scene-sub">(Mobile / Migratory)</div>
-                <div class="scene-desc">Classification: Anomalous Entity. A mobile, migratory cluster capable of traversing dimensional boundaries. Threat index rated High. Active containment protocols are in effect. Field agents must report all sightings immediately.</div>
               </div>
             </div>
 
@@ -836,6 +797,8 @@
     </div>
   </div>
 </div>
+
+<!-- SCANLINE OVERLAY -->
 <div id="sim-scanline"></div>
 
 <!-- CRASH SCREEN -->
@@ -852,6 +815,8 @@
   <p style="font-size:14px;color:#555;margin:0;"><strong>DSS AGENT PORTAL</strong> is currently unable to handle this request.</p>
   <p style="font-size:12px;font-weight:700;color:#555;margin:0;letter-spacing:0.5px;">HTTP ERROR 500</p>
   <button onclick="window.location.href='REPLACE_WITH_YOUR_URL'" style="margin-top:16px;background:#1a73e8;color:#fff;border:none;border-radius:4px;padding:10px 28px;font-size:14px;font-family:Arial,sans-serif;cursor:pointer;">Reload</button>
+</div>
+
 </body>
 </html>
 

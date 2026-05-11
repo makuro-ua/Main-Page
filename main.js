@@ -60,7 +60,7 @@ Narrators may either be hostile or friendly. Nonetheless, they have one thing in
 The Lord is an entity within this dimension, supposedly the one controlling everything within it. Nothing else is known of this dimension.`
   },
   'foliersinn': {
-    html: `<pre style="font-family:inherit;white-space:pre-wrap;font-size:12px;line-height:1.9;color:#3d1010;">SCENE: Folier's Inn
+    text: `<pre style="font-family:inherit;white-space:pre-wrap;font-size:12px;line-height:1.9;color:#3d1010;">SCENE: Folier's Inn
 DIMENSION: 08□
 CLASSIFICATION: Level 1
 POINT ZERO: Yes
