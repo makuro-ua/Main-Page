@@ -1931,7 +1931,7 @@ async function simRunResults() {
     if (shell2) shell2.classList.add('sim-pulsing');
   }
 
-  await simWait(15000);  // 15 second cooldown before next loop
+  await simWait(10000);  // 15 second cooldown before next loop
 
   // Glitch burst before switching
   const burstCount = Math.min(loop+1, 10);
